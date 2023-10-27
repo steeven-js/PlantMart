@@ -48,7 +48,7 @@ const Settings = ({navigation}) => {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.scrollViewContentContainerStyle}>
         {/* Section title component */}
-        <SectionTitle title="Account" />
+        <SectionTitle title="Mon compte" />
 
         {/* Vertical spacer */}
         <View style={styles.verticalSpacer} />
@@ -61,8 +61,8 @@ const Settings = ({navigation}) => {
               height={STANDARD_VECTOR_ICON_SIZE}
             />
           }
-          label="Edit profile"
-          onPress={() => navigation.navigate('Edit Profile')}
+          label="Modifier le profil"
+          onPress={() => navigation.navigate('Modifier le profil')}
         />
 
         {/* Vertical spacer */}
@@ -76,8 +76,8 @@ const Settings = ({navigation}) => {
               height={STANDARD_VECTOR_ICON_SIZE}
             />
           }
-          label="Reset password"
-          onPress={() => navigation.navigate('Reset Password')}
+          label="Réinitialisation du mot de passe"
+          onPress={() => navigation.navigate('Réinitialisation du mot de passe')}
         />
 
         {/* Vertical spacer */}

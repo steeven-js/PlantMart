@@ -97,7 +97,7 @@ const EmailVerification = ({navigation}) => {
           delay={1500}
           style={styles.questionAndLinkWrapper2}>
           {/* Question component */}
-          <Question question="Already have an account?" />
+          <Question question="J'ai déjà un compte?" />
 
           {/* Link component */}
           <Link label="Login" onPress={() => navigation.navigate('Login')} />

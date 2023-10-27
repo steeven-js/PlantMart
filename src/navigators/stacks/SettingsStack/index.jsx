@@ -52,9 +52,9 @@ const SettingsStack = () => {
   // Returning
   return (
     <Stack.Navigator screenOptions={screenOptions}>
-      <Stack.Screen name="Settings" component={Settings} />
-      <Stack.Screen name="Edit Profile" component={EditProfile} />
-      <Stack.Screen name="Reset Password" component={ResetPassword} />
+      <Stack.Screen name="Parametres" component={Settings} />
+      <Stack.Screen name="Modifier le profil" component={EditProfile} />
+      <Stack.Screen name="Réinitialisation du mot de passe" component={ResetPassword} />
       <Stack.Screen
         name="Notification Settings"
         component={NotificationSettings}

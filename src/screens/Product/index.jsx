@@ -54,6 +54,7 @@ const Product = ({navigation}) => {
   // Method to render large image
   const _renderLargeImages = ({item, index}) => (
     <View key={index} style={[styles.largeImageWrapper]}>
+      <Text>Bonjour</Text>
       <Image source={item.productImage} style={styles.largeImage} />
     </View>
   );

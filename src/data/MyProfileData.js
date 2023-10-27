@@ -15,7 +15,7 @@ const MyProfileData = [
         height={STANDARD_VECTOR_ICON_SIZE}
       />
     ),
-    label: 'Addresses',
+    label: 'Adresses',
   },
   {
     leftIcon: (
@@ -24,7 +24,7 @@ const MyProfileData = [
         height={STANDARD_VECTOR_ICON_SIZE}
       />
     ),
-    label: 'Orders',
+    label: 'Commandes',
   },
   {
     leftIcon: (
@@ -33,7 +33,7 @@ const MyProfileData = [
         height={STANDARD_VECTOR_ICON_SIZE}
       />
     ),
-    label: 'Wishlist',
+    label: 'Liste de souhaits',
   },
   {
     leftIcon: (
@@ -42,7 +42,7 @@ const MyProfileData = [
         height={STANDARD_VECTOR_ICON_SIZE}
       />
     ),
-    label: 'Wallet',
+    label: 'Portefeuille',
   },
   {
     leftIcon: (

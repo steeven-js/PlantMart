@@ -28,12 +28,12 @@ const Register = ({navigation}) => {
         style={[styles.formWrapper, {backgroundColor: theme.primary}]}>
         {/* Screen title component */}
         <Animatable.View animation="fadeInUp" delay={300}>
-          <ScreenTitle title="Register" />
+          <ScreenTitle title="Inscription" />
         </Animatable.View>
 
         {/* Screen info component */}
         <Animatable.View animation="fadeInUp" delay={500}>
-          <ScreenInfo info="hey, enter your account details to create a new Plant mart customer account." />
+          <ScreenInfo info="Salut, saisissez vos informations de compte pour créer un nouveau compte client chez Plant Mart." />
         </Animatable.View>
 
         {/* Vertical spacer */}
@@ -70,7 +70,7 @@ const Register = ({navigation}) => {
         {/* Button component */}
         <Animatable.View animation="fadeInUp" delay={1300}>
           <Button
-            label="Register"
+            label="Inscription"
             onPress={() => navigation.navigate('Email Verification')}
           />
         </Animatable.View>
@@ -84,7 +84,7 @@ const Register = ({navigation}) => {
           delay={1500}
           style={styles.questionAndLinkWrapper}>
           {/* Question component */}
-          <Question question="Already have an account?" />
+          <Question question="Vous avez déjà un compte ?" />
 
           {/* Login component */}
           <Link label="Login" onPress={() => navigation.goBack()} />

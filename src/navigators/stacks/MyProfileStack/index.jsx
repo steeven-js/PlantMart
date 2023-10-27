@@ -20,7 +20,7 @@ import styles from '../styles';
 // Creating stack navigator
 const Stack = createStackNavigator();
 
-// My profile stack
+// Mon Profile stack
 const MyProfileStack = () => {
   // Using context
   const {isLightTheme, lightTheme, darkTheme} = useContext(ThemeContext);
@@ -57,7 +57,7 @@ const MyProfileStack = () => {
   // Returning
   return (
     <Stack.Navigator screenOptions={screenOptions}>
-      <Stack.Screen name="My Profile" component={MyProfile} />
+      <Stack.Screen name="Mon Profile" component={MyProfile} />
       <Stack.Screen name="Addresses" component={Addresses} />
       <Stack.Screen name="Orders" component={Orders} />
       <Stack.Screen name="Order" component={Order} />
