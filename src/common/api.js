@@ -1,6 +1,6 @@
-import { apiUrl } from './const';
-import { preparationApiUrl } from './const';
-import { categoryApiUrl } from './const';
+import { apiUrl } from '../common/const';
+import { preparationApiUrl } from '../common/const';
+import { categoryApiUrl } from '../common/const';
 
 export const getOnePlant = async (id = 0) => {
     try {

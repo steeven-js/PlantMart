@@ -29,7 +29,7 @@ const Categories = ({navigation}) => {
     }
   };
 
-  console.log('data', data)
+  // console.log('data', data)
 
   // useEffect
   useEffect(() => {
@@ -55,7 +55,7 @@ const Categories = ({navigation}) => {
               id={item.id}
               categoryImage={require('../../assets/images/categories/465_x_218.png')}
               categoryName={item.name}
-              onPress={() => navigation.navigate('List View Products')}
+              onPress={() => navigation.navigate('List View Products', { id: item.id })}
             />
           )}
         />
