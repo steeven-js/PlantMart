@@ -1,7 +1,7 @@
-import {useContext} from 'react';
-import {View, Text, TouchableOpacity, ScrollView, Image} from 'react-native';
+import { useContext, useEffect, useState } from 'react';
+import { View, Text, TouchableOpacity, ScrollView, Image } from 'react-native';
 import * as Animatable from 'react-native-animatable';
-import {ThemeContext} from '../../theming/contexts/ThemeContext';
+import { ThemeContext } from '../../theming/contexts/ThemeContext';
 import SvgDrawerMenu from '../../assets/icons/svg/ic_drawer_menu.svg';
 import SvgMan2 from '../../assets/avatars/svg/av_man_2.svg';
 import CategoriesData from '../../data/CategoriesData';
@@ -12,24 +12,44 @@ import {
 import SearchTextInput from '../../components/inputs/SearchTextInput';
 import SectionTitle from '../../components/headings/SectionTitle';
 import Link from '../../components/links/Link';
-import {IndependentColors} from '../../config/Colors';
+import { IndependentColors } from '../../config/Colors';
 import GridViewProduct from '../../components/cards/GridViewProduct';
 import GridViewProductsData from '../../data/GridViewProductsData';
 import GlobalOutletsData from '../../data/GlobalOutletsData';
 import OutletCard from '../../components/cards/OutletCard';
+import { categoryApiUrl } from '../../common/const';
 import styles from './styles';
 
 // Functional component
-const Home = ({navigation}) => {
+const Home = ({ navigation }) => {
   // Using context
-  const {isLightTheme, lightTheme, darkTheme} = useContext(ThemeContext);
+  const { isLightTheme, lightTheme, darkTheme } = useContext(ThemeContext);
 
   // Storing theme config according to the theme mode
   const theme = isLightTheme ? lightTheme : darkTheme;
 
+  // UseState
+  const [data, setData] = useState([]);
+
+  // Fetching data
+  const getCategories = async () => {
+    try {
+      const response = await fetch(categoryApiUrl);
+      const json = await response.json();
+      setData(json);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  // useEffect
+  useEffect(() => {
+    getCategories();
+  }, [])
+
   // Returning
   return (
-    <View style={[styles.mainWrapper, {backgroundColor: theme.primary}]}>
+    <View style={[styles.mainWrapper, { backgroundColor: theme.primary }]}>
       <Animatable.View animation="fadeInUp" delay={100}>
         <ScrollView showsVerticalScrollIndicator={false} bounces={false}>
           {/* Header */}
@@ -80,20 +100,20 @@ const Home = ({navigation}) => {
               contentContainerStyle={
                 styles.horizontalScrollViewContentContainerStyle
               }>
-              {CategoriesData.map((item, index) => {
+              {data.map((item, index) => {
                 {
                   return index === 0 ? (
                     <TouchableOpacity
                       key={index}
                       style={[
                         styles.categoryLabelWrapper,
-                        {backgroundColor: theme.accent},
+                        { backgroundColor: theme.accent },
                       ]}
-                      onPress={() => navigation.navigate('List View Products')}>
+                      onPress={() => navigation.navigate('Categories')}>
                       <Text
                         style={[
                           styles.categoryLabel,
-                          {color: IndependentColors.white},
+                          { color: IndependentColors.white },
                         ]}>
                         View All
                       </Text>
@@ -103,15 +123,15 @@ const Home = ({navigation}) => {
                       key={index}
                       style={[
                         styles.categoryLabelWrapper,
-                        {backgroundColor: theme.secondary},
+                        { backgroundColor: theme.secondary },
                       ]}
-                      onPress={() => navigation.navigate('List View Products')}>
+                      onPress={() => navigation.navigate('List View Products', { id: item.id })}>
                       <Text
                         style={[
                           styles.categoryLabel,
-                          {color: theme.textLowContrast},
+                          { color: theme.textLowContrast },
                         ]}>
-                        {item.categoryName}
+                        {item.name}
                       </Text>
                     </TouchableOpacity>
                   );

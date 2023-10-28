@@ -54,16 +54,20 @@ const ListViewProducts = ({ navigation, route }) => {
         contentContainerStyle={styles.scrollViewContentContainerStyle}>
         {category && category.name ? <Text>{category.name}</Text> : null}
         <Animatable.View animation="fadeInUp" delay={100}>
-          {plantes && plantes.map((item, index) => (
-            <ListViewProduct
-              key={index}
-              id={item.id}
-              productImage={require('../../assets/images/products/300_x_400.png')}
-              productTitle={item.name}
-              productPrice={item.price}
-              onPress={() => navigation.navigate('Product', { id: item.id })}
-            />
-          ))}
+          {plantes && plantes.length > 0 ? (
+            plantes.map((item, index) => (
+              <ListViewProduct
+                key={index}
+                id={item.id}
+                productImage={require('../../assets/images/products/300_x_400.png')}
+                productTitle={item.name}
+                productPrice={item.price}
+                onPress={() => navigation.navigate('Product', { id: item.id })}
+              />
+            ))
+          ) : (
+            <Text>Aucune plante liée à cette spécialité.</Text>
+          )}
         </Animatable.View>
       </ScrollView>
     </View>
