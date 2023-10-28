@@ -99,7 +99,7 @@ const Settings = ({navigation}) => {
         <View style={styles.verticalSpacer} />
 
         {/* Section title component */}
-        <SectionTitle title="Messaging" />
+        <SectionTitle title="Messagerie" />
 
         {/* Vertical spacer */}
         <View style={styles.verticalSpacer} />
@@ -147,7 +147,7 @@ const Settings = ({navigation}) => {
               height={STANDARD_VECTOR_ICON_SIZE}
             />
           }
-          label="Sound"
+          label="Son"
         />
 
         {/* Vertical spacer */}
@@ -161,22 +161,22 @@ const Settings = ({navigation}) => {
               height={STANDARD_VECTOR_ICON_SIZE}
             />
           }
-          label="Voice"
+          label="Voix"
         />
 
         {/* Vertical spacer */}
         <View style={styles.verticalSpacer} />
 
         {/* Section title component */}
-        <SectionTitle title="Appearance" />
+        <SectionTitle title="Apparence" />
 
         {/* Vertical spacer */}
         <View style={styles.verticalSpacer} />
 
         {/* Switch list */}
         <SwitchList
-          label="App Theme"
-          labelInfo={`Switch to ${isLightTheme ? 'dark' : 'light'} mode.`}
+          label="Thème de l'application"
+          labelInfo={`Basculer vers le mode: ${isLightTheme ? 'dark' : 'light'} `}
           trackActiveColor={Track_Active_Color}
           trackInactiveColor={Track_Inactive_Color}
           thumbActiveColor={Thumb_Active_Color}
