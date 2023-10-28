@@ -1,14 +1,14 @@
-import {useContext, useState, useEffect} from 'react';
-import {View, ScrollView} from 'react-native';
+import { useContext, useState, useEffect } from 'react';
+import { View, ScrollView, Text } from 'react-native';
 import * as Animatable from 'react-native-animatable';
-import {ThemeContext} from '../../theming/contexts/ThemeContext';
+import { ThemeContext } from '../../theming/contexts/ThemeContext';
 import styles from './styles';
 import ListViewProduct from '../../components/cards/ListViewProduct';
 import ListViewProductsData from '../../data/ListViewProductsData';
 import { getOneCategory } from '../../common/api';
 import { useParams } from '@react-navigation/native';
 
-const ListViewProducts = ({navigation, route}) => {
+const ListViewProducts = ({ navigation, route }) => {
   // Using context
   const { isLightTheme, lightTheme, darkTheme } = useContext(ThemeContext);
 
@@ -21,7 +21,7 @@ const ListViewProducts = ({navigation, route}) => {
 
   // UseParams
   const { id } = route.params;
-  // console.log("useParams", id);
+  // console.log("route.params", id);
 
   const loadApiCat = async () => {
     if (id !== 0) {
@@ -36,22 +36,23 @@ const ListViewProducts = ({navigation, route}) => {
     }
   }
 
-  console.log('category', category)
-  console.log('Plantes', plantes)
+  // console.log('category', category)
+  // console.log('Plantes', plantes)
 
-  // Call loadApiCat when the component mounts to load the category data
+  // useEffect
   useEffect(() => {
     loadApiCat();
   }, []);
 
   // Returning
   return (
-    <View style={[styles.mainWrapper, {backgroundColor: theme.primary}]}>
+    <View style={[styles.mainWrapper, { backgroundColor: theme.primary }]}>
       {/* Scroll View */}
       <ScrollView
         bounces={false}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.scrollViewContentContainerStyle}>
+        {category && category.name ? <Text>{category.name}</Text> : null}
         <Animatable.View animation="fadeInUp" delay={100}>
           {plantes && plantes.map((item, index) => (
             <ListViewProduct
@@ -60,7 +61,7 @@ const ListViewProducts = ({navigation, route}) => {
               productImage={require('../../assets/images/products/300_x_400.png')}
               productTitle={item.name}
               productPrice={item.price}
-              onPress={() => navigation.navigate('Product Details', { id: item.id })}
+              onPress={() => navigation.navigate('Product', { id: item.id })}
             />
           ))}
         </Animatable.View>

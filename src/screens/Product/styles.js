@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 import {
   FONT_SIZE_MD,
   FONT_SIZE_SM,
@@ -15,12 +15,17 @@ import {
   STANDARD_SPACING,
   STANDARD_VECTOR_ICON_WRAPPER_SIZE,
 } from '../../config/Constants';
-import {scale} from 'react-native-size-matters';
+import { scale } from 'react-native-size-matters';
 
 // Creating & exporting stylesheet
 export default StyleSheet.create({
   mainWrapper: {
     flex: STANDARD_FLEX,
+  },
+  symptomeLabelWrapper: {
+    padding: STANDARD_SPACING * 2,
+    borderRadius: STANDARD_SPACING,
+    marginHorizontal: STANDARD_SPACING * 1.5,
   },
   flatListsWrapper: {
     flex: STANDARD_FLEX,
