@@ -178,7 +178,7 @@ const Home = ({ navigation }) => {
             {/* Link component */}
             <Link
               label="See all"
-              // onPress={() => navigation.navigate('List View Products')}
+              onPress={() => navigation.navigate('Grid View Popular')}
             />
           </View>
 

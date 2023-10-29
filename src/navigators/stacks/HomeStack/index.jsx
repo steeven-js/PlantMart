@@ -6,6 +6,7 @@ import Categories from '../../../screens/Categories';
 import ListViewCategory from '../../../screens/ListViewCategory';
 import ListViewProducts from '../../../screens/ListViewProducts';
 import GridViewProducts from '../../../screens/GridViewProducts';
+import GridViewPopular from '../../../screens/GridViewPopular';
 import Product from '../../../screens/Product';
 import Plante from '../../../screens/Plante';
 import ProductReviews from '../../../screens/ProductReviews';
@@ -66,6 +67,7 @@ const HomeStack = () => {
       <Stack.Screen name="Plante" component={Plante} />
       <Stack.Screen name="Product Reviews" component={ProductReviews} />
       <Stack.Screen name="Most Popular" component={MostPopular} />
+      <Stack.Screen name="Grid View Popular" component={GridViewPopular} />
 
       {/* Default */}
       <Stack.Screen name="List View Products" component={ListViewProducts} />
