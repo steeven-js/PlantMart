@@ -1,10 +1,10 @@
-import {memo, useContext} from 'react';
-import {Text, TextInput as RNTextInput} from 'react-native';
-import {ThemeContext} from '../../../theming/contexts/ThemeContext';
+import { memo, useContext } from 'react';
+import { Text, TextInput as RNTextInput } from 'react-native';
+import { ThemeContext } from '../../../theming/contexts/ThemeContext';
 import styles from './styles';
 
 // Functional component
-const TextInput = ({label, placeholder, value, text}) => {
+const TextInput = ({ label, placeholder, value, onChangeText }) => { // Changed 'text' to 'onChangeText'
   // Using context
   const {isLightTheme, lightTheme, darkTheme} = useContext(ThemeContext);
 
@@ -15,7 +15,7 @@ const TextInput = ({label, placeholder, value, text}) => {
   return (
     <>
       {/* Text input label */}
-      <Text style={[styles.textInputLabel, {color: theme.textHighContrast}]}>
+      <Text style={[styles.textInputLabel, { color: theme.textHighContrast }]}>
         {label}
       </Text>
       {/* Text input */}
@@ -23,7 +23,7 @@ const TextInput = ({label, placeholder, value, text}) => {
         placeholder={placeholder}
         placeholderTextColor={theme.textLowContrast}
         value={value}
-        onchangeText={text}
+        onChangeText={onChangeText} // Changed 'onchangeText' to 'onChangeText'
         style={[
           styles.textInput,
           {

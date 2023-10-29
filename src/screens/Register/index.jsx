@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { View } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import Button from '../../components/buttons/Button';
@@ -17,6 +17,15 @@ const Register = ({ navigation }) => {
 
   // Storing theme config according to the theme mode
   const theme = isLightTheme ? lightTheme : darkTheme;
+
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const register = () => {
+    console.log('name', name, 'email', email, 'password', password);
+  }
+
 
   // Returning
   return (
@@ -45,6 +54,8 @@ const Register = ({ navigation }) => {
           <TextInput
             label="Name"
             placeholder="Enter your name"
+            value={name}
+            onChangeText={text => setName(text)}
           />
         </Animatable.View>
 
@@ -55,7 +66,10 @@ const Register = ({ navigation }) => {
         <Animatable.View animation="fadeInUp" delay={900}>
           <TextInput
             label="Email"
-            placeholder="Enter your email address" />
+            placeholder="Enter your email address"
+            value={email}
+            onChangeText={text => setEmail(text)}
+          />
         </Animatable.View>
 
         {/* Vertical spacer */}
@@ -66,6 +80,9 @@ const Register = ({ navigation }) => {
           <TextInput
             label="Password"
             placeholder="Enter your password"
+            value={password}
+            onChangeText={text => setPassword(text)}
+            secureTextEntry={true}
           />
         </Animatable.View>
 
@@ -76,7 +93,7 @@ const Register = ({ navigation }) => {
         <Animatable.View animation="fadeInUp" delay={1300}>
           <Button
             label="Inscription"
-            onPress={() => ''}
+            onPress={register}
           />
         </Animatable.View>
 
