@@ -62,7 +62,7 @@ const ListViewProducts = ({ navigation, route }) => {
                 productImage={require('../../assets/images/products/300_x_400.png')}
                 productTitle={item.name}
                 productPrice={item.price}
-                onPress={() => navigation.navigate('Product', { id: item.id })}
+                onPress={() => navigation.navigate('Plante', { id: item.id })}
               />
             ))
           ) : (

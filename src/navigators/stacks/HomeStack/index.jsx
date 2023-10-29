@@ -4,8 +4,10 @@ import {createStackNavigator} from '@react-navigation/stack';
 import Home from '../../../screens/Home';
 import Categories from '../../../screens/Categories';
 import ListViewCategory from '../../../screens/ListViewCategory';
+import ListViewProducts from '../../../screens/ListViewProducts';
 import GridViewProducts from '../../../screens/GridViewProducts';
 import Product from '../../../screens/Product';
+import Plante from '../../../screens/Plante';
 import ProductReviews from '../../../screens/ProductReviews';
 import {IndependentColors} from '../../../config/Colors';
 import {STANDARD_VECTOR_ICON_SIZE} from '../../../config/Constants';
@@ -61,12 +63,14 @@ const HomeStack = () => {
       />
       <Stack.Screen name="Categories" component={Categories} />
       <Stack.Screen name="List View Category" component={ListViewCategory} />
-      {/* <Stack.Screen name="List View Products" component={ListViewProducts} /> */}
-      <Stack.Screen name="Grid View Products" component={GridViewProducts} />
-      <Stack.Screen name="Product" component={Product} />
-      {/* <Stack.Screen name="Product" component={Product} /> */}
+      <Stack.Screen name="Plante" component={Plante} />
       <Stack.Screen name="Product Reviews" component={ProductReviews} />
       <Stack.Screen name="Most Popular" component={MostPopular} />
+
+      {/* Default */}
+      <Stack.Screen name="List View Products" component={ListViewProducts} />
+      <Stack.Screen name="Grid View Products" component={GridViewProducts} />
+      <Stack.Screen name="Product" component={Product} />
     </Stack.Navigator>
   );
 };
