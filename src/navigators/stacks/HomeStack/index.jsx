@@ -12,6 +12,7 @@ import {STANDARD_VECTOR_ICON_SIZE} from '../../../config/Constants';
 import {ThemeContext} from '../../../theming/contexts/ThemeContext';
 import ArrowLeftWhiteSvg from '../../../assets/icons/svg/ic_arrow_left_white.svg';
 import styles from '../styles';
+import MostPopular from '../../../screens/MostPopular';
 
 // Creating stack navigator
 const Stack = createStackNavigator();
@@ -63,6 +64,7 @@ const HomeStack = () => {
       <Stack.Screen name="Grid View Products" component={GridViewProducts} />
       <Stack.Screen name="Product" component={Product} />
       <Stack.Screen name="Product Reviews" component={ProductReviews} />
+      <Stack.Screen name="Most Popular" component={MostPopular} />
     </Stack.Navigator>
   );
 };
