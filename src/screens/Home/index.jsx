@@ -214,7 +214,7 @@ const Home = ({ navigation }) => {
           {/* Vertical spacer */}
           <View style={styles.verticalSpacer} />
 
-          {/* Section title & link wrapper */}
+          {/*Best seller Section title & link wrapper */}
           <View style={styles.sectionTitleAndLinkWrapper}>
             {/* Section title component */}
             <SectionTitle title="Best seller" />
@@ -222,7 +222,7 @@ const Home = ({ navigation }) => {
             {/* Link component */}
             <Link
               label="See all"
-              onPress={() => navigation.navigate('Grid View Products')}
+              onPress={() => navigation.navigate('Grid View Best Seller')}
             />
           </View>
 
