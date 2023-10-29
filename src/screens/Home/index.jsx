@@ -170,7 +170,7 @@ const Home = ({ navigation }) => {
           {/* Vertical spacer */}
           <View style={styles.verticalSpacer} />
 
-          {/* Section title & link wrapper */}
+          {/*Most popular Section title & link wrapper */}
           <View style={styles.sectionTitleAndLinkWrapper}>
             {/* Section title component */}
             <SectionTitle title="Most popular" />
@@ -260,7 +260,7 @@ const Home = ({ navigation }) => {
           {/* Vertical spacer */}
           <View style={styles.verticalSpacer} />
 
-          {/* Section title & link wrapper */}
+          {/*New arrivals Section title & link wrapper */}
           <View style={styles.sectionTitleAndLinkWrapper}>
             {/* Section title component */}
             <SectionTitle title="New arrivals" />
@@ -302,38 +302,6 @@ const Home = ({ navigation }) => {
 
           {/* Vertical spacer */}
           <View style={styles.verticalSpacer} />
-
-          {/* Section title & link wrapper */}
-          <View style={styles.sectionTitleAndLinkWrapper}>
-            {/* Section title component */}
-            <SectionTitle title="Recently viewed" />
-
-            {/* Link component */}
-            <Link label="See all" />
-          </View>
-
-          {/* Horizontal scroll view */}
-          <View>
-            <ScrollView
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              bounces={false}
-              contentContainerStyle={
-                styles.horizontalScrollViewContentContainerStyle
-              }>
-              {GridViewProductsData.map((product, index) => (
-                <View key={index} style={styles.productWrapper}>
-                  <GridViewProduct
-                    productImage={product.productImage}
-                    productTitle={product.productTitle}
-                    productPrice={product.productPrice}
-                    rating={product.rating}
-                    onPress={() => navigation.navigate('Product')}
-                  />
-                </View>
-              ))}
-            </ScrollView>
-          </View>
 
           {/* Section title & link wrapper */}
           <View style={styles.sectionTitleAndLinkWrapper}>
