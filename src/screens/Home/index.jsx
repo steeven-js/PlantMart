@@ -191,12 +191,12 @@ const Home = ({ navigation }) => {
               contentContainerStyle={
                 styles.horizontalScrollViewContentContainerStyle
               }>
-              {MostPopular.map((product, index) => (
+              {MostPopular.slice(0, 6).map((product, index) => (
                 <View key={index} style={styles.productWrapper}>
                   <GridViewProduct
                     productImage={require('../../assets/images/products/300_x_400.png')}
                     productTitle={product.name}
-                    // onPress={() => navigation.navigate('Product')}
+                    onPress={() => navigation.navigate('Plante', { id: product.id })}
                   />
                 </View>
               ))}
