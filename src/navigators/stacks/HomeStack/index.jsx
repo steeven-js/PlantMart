@@ -3,7 +3,7 @@ import {TouchableOpacity} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
 import Home from '../../../screens/Home';
 import Categories from '../../../screens/Categories';
-import ListViewProducts from '../../../screens/ListViewProducts';
+import ListViewCategory from '../../../screens/ListViewCategory';
 import GridViewProducts from '../../../screens/GridViewProducts';
 import Product from '../../../screens/Product';
 import ProductReviews from '../../../screens/ProductReviews';
@@ -60,9 +60,11 @@ const HomeStack = () => {
         options={{headerShown: false}}
       />
       <Stack.Screen name="Categories" component={Categories} />
-      <Stack.Screen name="List View Products" component={ListViewProducts} />
+      <Stack.Screen name="List View Category" component={ListViewCategory} />
+      {/* <Stack.Screen name="List View Products" component={ListViewProducts} /> */}
       <Stack.Screen name="Grid View Products" component={GridViewProducts} />
       <Stack.Screen name="Product" component={Product} />
+      {/* <Stack.Screen name="Product" component={Product} /> */}
       <Stack.Screen name="Product Reviews" component={ProductReviews} />
       <Stack.Screen name="Most Popular" component={MostPopular} />
     </Stack.Navigator>

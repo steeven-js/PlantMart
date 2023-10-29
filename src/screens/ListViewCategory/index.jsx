@@ -8,7 +8,7 @@ import ListViewProductsData from '../../data/ListViewProductsData';
 import { getOneCategory } from '../../common/api';
 import { useParams } from '@react-navigation/native';
 
-const ListViewCategory = ({ navigation, route }) => {
+const ListViewProducts = ({ navigation, route }) => {
   // Using context
   const { isLightTheme, lightTheme, darkTheme } = useContext(ThemeContext);
 
@@ -75,4 +75,4 @@ const ListViewCategory = ({ navigation, route }) => {
 };
 
 // Exporting
-export default ListViewCategory;
+export default ListViewProducts;

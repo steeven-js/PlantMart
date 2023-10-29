@@ -141,7 +141,7 @@ const Home = ({ navigation }) => {
                         styles.categoryLabelWrapper,
                         { backgroundColor: theme.secondary },
                       ]}
-                      onPress={() => navigation.navigate('List View Products', { id: item.id })}>
+                      onPress={() => navigation.navigate('List View Category', { id: item.id })}>
                       <Text
                         style={[
                           styles.categoryLabel,
