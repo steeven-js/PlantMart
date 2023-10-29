@@ -4,7 +4,7 @@ import {ThemeContext} from '../../../theming/contexts/ThemeContext';
 import styles from './styles';
 
 // Functional component
-const TextInput = ({label, placeholder}) => {
+const TextInput = ({label, placeholder, value, text}) => {
   // Using context
   const {isLightTheme, lightTheme, darkTheme} = useContext(ThemeContext);
 
@@ -22,6 +22,8 @@ const TextInput = ({label, placeholder}) => {
       <RNTextInput
         placeholder={placeholder}
         placeholderTextColor={theme.textLowContrast}
+        value={value}
+        onchangeText={text}
         style={[
           styles.textInput,
           {
