@@ -55,7 +55,7 @@ const Categories = ({navigation}) => {
               id={item.id}
               categoryImage={require('../../assets/images/categories/465_x_218.png')}
               categoryName={item.name}
-              onPress={() => navigation.navigate('Plante', { id: item.id })}
+              onPress={() => navigation.navigate('List View Category', { id: item.id })}
             />
           )}
         />
