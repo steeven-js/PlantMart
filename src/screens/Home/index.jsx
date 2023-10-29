@@ -29,14 +29,14 @@ const Home = ({ navigation }) => {
   const theme = isLightTheme ? lightTheme : darkTheme;
 
   // UseState
-  const [data, setData] = useState([]);
+  const [Category, setCategory] = useState([]);
 
   // Fetching data
   const getCategories = async () => {
     try {
       const response = await fetch(categoryApiUrl);
       const json = await response.json();
-      setData(json);
+      setCategory(json);
     } catch (error) {
       console.error(error);
     }
@@ -100,7 +100,7 @@ const Home = ({ navigation }) => {
               contentContainerStyle={
                 styles.horizontalScrollViewContentContainerStyle
               }>
-              {data.map((item, index) => {
+              {Category.map((item, index) => {
                 {
                   return index === 0 ? (
                     <TouchableOpacity
