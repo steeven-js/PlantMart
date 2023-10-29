@@ -18,6 +18,7 @@ import GridViewProductsData from '../../data/GridViewProductsData';
 import GlobalOutletsData from '../../data/GlobalOutletsData';
 import OutletCard from '../../components/cards/OutletCard';
 import { categoryApiUrl } from '../../common/const';
+import { mostPopularApiUrl } from '../../common/const';
 import styles from './styles';
 
 // Functional component
@@ -30,6 +31,7 @@ const Home = ({ navigation }) => {
 
   // UseState
   const [Category, setCategory] = useState([]);
+  const [MostPopular, setMostPopular] = useState([]);
 
   // Fetching data
   const getCategories = async () => {
@@ -42,9 +44,23 @@ const Home = ({ navigation }) => {
     }
   };
 
+  // Fetching data
+  const getMostPopular = async () => {
+    try {
+      const response = await fetch(mostPopularApiUrl);
+      const json = await response.json();
+      setMostPopular(json);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  // console.log('MostPopular', MostPopular);
+
   // useEffect
   useEffect(() => {
     getCategories();
+    getMostPopular();
   }, [])
 
   // Returning
@@ -162,7 +178,7 @@ const Home = ({ navigation }) => {
             {/* Link component */}
             <Link
               label="See all"
-              onPress={() => navigation.navigate('List View Products')}
+              // onPress={() => navigation.navigate('List View Products')}
             />
           </View>
 
@@ -175,14 +191,12 @@ const Home = ({ navigation }) => {
               contentContainerStyle={
                 styles.horizontalScrollViewContentContainerStyle
               }>
-              {GridViewProductsData.map((product, index) => (
+              {MostPopular.map((product, index) => (
                 <View key={index} style={styles.productWrapper}>
                   <GridViewProduct
-                    productImage={product.productImage}
-                    productTitle={product.productTitle}
-                    productPrice={product.productPrice}
-                    rating={product.rating}
-                    onPress={() => navigation.navigate('Product')}
+                    productImage={require('../../assets/images/products/300_x_400.png')}
+                    productTitle={product.name}
+                    // onPress={() => navigation.navigate('Product')}
                   />
                 </View>
               ))}
