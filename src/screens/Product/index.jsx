@@ -1,4 +1,4 @@
-import { useContext, useRef, useState, useEffect } from 'react';
+import {useContext, useRef, useState} from 'react';
 import {
   View,
   FlatList,
@@ -8,50 +8,25 @@ import {
   ScrollView,
 } from 'react-native';
 import React from 'react';
-import { ThemeContext } from '../../theming/contexts/ThemeContext';
-import { SCREEN_WIDTH, STANDARD_VECTOR_ICON_SIZE } from '../../config/Constants';
+import {ThemeContext} from '../../theming/contexts/ThemeContext';
+import {SCREEN_WIDTH, STANDARD_VECTOR_ICON_SIZE} from '../../config/Constants';
 import GridViewProductsData from '../../data/GridViewProductsData';
 import HeartDarkGreenSvg from '../../assets/icons/svg/ic_heart_dark_green.svg';
 import StarSvg from '../../assets/icons/svg/ic_star.svg';
 import SvgPlus from '../../assets/icons/svg/ic_plus_dark_green.svg';
 import SvgMinus from '../../assets/icons/svg/ic_minus_dark_green.svg';
-import { getOnePlant } from '../../common/api';
 import styles from './styles';
 
 // Functional component
-const Product = ({ navigation, route }) => {
+const Product = ({navigation}) => {
   // Using context
-  const { isLightTheme, lightTheme, darkTheme } = useContext(ThemeContext);
+  const {isLightTheme, lightTheme, darkTheme} = useContext(ThemeContext);
 
   // Getting theme config according to the theme mode
   const theme = isLightTheme ? lightTheme : darkTheme;
 
   // Local states
   const [activeScrollIndex, setActiveScrollIndex] = useState(0);
-  const [plante, setPlante] = useState(null);
-
-  // UseParams
-  const { id } = route.params;
-  // console.log("route.params", id);
-
-  const loadApiPlante = async () => {
-    if (id !== 0) {
-      try {
-        const data = await getOnePlant(id);
-        setPlante(data);
-        // console.log('data', data);
-      } catch (error) {
-        console.error('Error loading Plant data:', error);
-      }
-    }
-  }
-
-  // console.log('plante', plante)
-
-  // useEffect
-  useEffect(() => {
-    loadApiPlante();
-  }, []);
 
   // useRef hooks
   const verticalFlatList = useRef(null);
@@ -77,14 +52,14 @@ const Product = ({ navigation, route }) => {
   };
 
   // Method to render large image
-  const _renderLargeImages = ({ item, index }) => (
+  const _renderLargeImages = ({item, index}) => (
     <View key={index} style={[styles.largeImageWrapper]}>
       <Image source={item.productImage} style={styles.largeImage} />
     </View>
   );
 
   // Method to render thumbnail image
-  const _renderThumbnailImages = ({ item, index }) => (
+  const _renderThumbnailImages = ({item, index}) => (
     <TouchableOpacity
       onPress={() => scrollToIndex(index)}
       key={index}
@@ -103,14 +78,13 @@ const Product = ({ navigation, route }) => {
 
   // Returning
   return (
-    <View style={[styles.mainWrapper, { backgroundColor: theme.primary }]}>
-      {/* Product gallery */}
+    <View style={[styles.mainWrapper, {backgroundColor: theme.primary}]}>
       <View style={styles.flatListsWrapper}>
         {/* Vertical FlatList */}
         <View
           style={[
             styles.verticalFlatListWrapper,
-            { backgroundColor: theme.secondary },
+            {backgroundColor: theme.secondary},
           ]}>
           <FlatList
             ref={verticalFlatList}
@@ -129,7 +103,7 @@ const Product = ({ navigation, route }) => {
         <View
           style={[
             styles.horizontalFlatListWrapper,
-            { backgroundColor: theme.accentLightest },
+            {backgroundColor: theme.accentLightest},
           ]}>
           <FlatList
             ref={horizontalFlatList}
@@ -158,20 +132,20 @@ const Product = ({ navigation, route }) => {
           bounces={false}
           style={[
             styles.productDetailsScrollView,
-            { backgroundColor: theme.primary },
+            {backgroundColor: theme.primary},
           ]}>
           <View style={styles.productTitleAndHeartIconWrapper}>
             <View style={styles.productTitleWrapper}>
               <Text
-                style={[styles.productTitle, { color: theme.textHighContrast }]}
+                style={[styles.productTitle, {color: theme.textHighContrast}]}
                 numberOfLines={1}>
-                {plante && plante.name ? <Text>{plante.name}</Text> : null}
+                Alocasia macrorrhiza Stingray Plant
               </Text>
             </View>
             <TouchableOpacity
               style={[
                 styles.heartIconWrapper,
-                { backgroundColor: theme.secondary },
+                {backgroundColor: theme.secondary},
               ]}>
               <HeartDarkGreenSvg
                 width={STANDARD_VECTOR_ICON_SIZE}
@@ -180,9 +154,82 @@ const Product = ({ navigation, route }) => {
             </TouchableOpacity>
           </View>
 
+          {/* Rating */}
+          <TouchableOpacity
+            style={styles.ratingWrapper}
+            onPress={() => navigation.navigate('Product Reviews')}>
+            <StarSvg
+              width={STANDARD_VECTOR_ICON_SIZE * 0.9}
+              height={STANDARD_VECTOR_ICON_SIZE * 0.9}
+            />
+            <Text style={[styles.rating, {color: theme.accent}]}>4.8</Text>
+            <Text style={[styles.outOf, {color: theme.textLowContrast}]}>
+              out of
+            </Text>
+            <Text
+              style={[styles.ratingThreshold, {color: theme.textHighContrast}]}>
+              5.0
+            </Text>
+            <Text style={[styles.totalRating, {color: theme.textHighContrast}]}>
+              (177)
+            </Text>
+          </TouchableOpacity>
+
+          {/* Pricing and quantity */}
+          <View>
+            <Text
+              style={[styles.sectionTitle, {color: theme.textHighContrast}]}>
+              Price
+            </Text>
+            <View style={styles.productPriceAndQuantityWrapper}>
+              <Text style={[styles.productPrice, {color: theme.accent}]}>
+                $10.07
+              </Text>
+              {/* Quantity wrapper */}
+              <View
+                style={[
+                  styles.productQuantityWrapper,
+                  {borderColor: theme.accent},
+                ]}>
+                {/* Plus icon wrapper */}
+                <TouchableOpacity
+                  style={[
+                    styles.plusIconWrapper,
+                    {backgroundColor: theme.secondary},
+                  ]}>
+                  <SvgPlus
+                    width={STANDARD_VECTOR_ICON_SIZE * 0.9}
+                    height={STANDARD_VECTOR_ICON_SIZE * 0.9}
+                  />
+                </TouchableOpacity>
+
+                {/* Quantity */}
+                <Text
+                  style={[
+                    styles.productQuantity,
+                    {color: theme.textHighContrast},
+                  ]}>
+                  1
+                </Text>
+
+                {/* Minus icon wrapper */}
+                <TouchableOpacity
+                  style={[
+                    styles.minusIconWrapper,
+                    {backgroundColor: theme.secondary},
+                  ]}>
+                  <SvgMinus
+                    width={STANDARD_VECTOR_ICON_SIZE * 0.9}
+                    height={STANDARD_VECTOR_ICON_SIZE * 0.9}
+                  />
+                </TouchableOpacity>
+              </View>
+            </View>
+          </View>
+
           {/* Plant care */}
-          <Text style={[styles.sectionTitle, { color: theme.textHighContrast }]}>
-            Usages recommandés
+          <Text style={[styles.sectionTitle, {color: theme.textHighContrast}]}>
+            Plant care
           </Text>
 
           {/* Horizontal ScrollView */}
@@ -191,32 +238,71 @@ const Product = ({ navigation, route }) => {
               horizontal
               bounces={false}
               showsHorizontalScrollIndicator={false}>
-              {plante && plante.usages ? (
-                plante.usages.map((usage, index) => (
-                  <View
-                    key={index}
-                    style={[
-                      styles.symptomeLabelWrapper,
-                      { backgroundColor: theme.accent },
-                    ]}
-                  >
-                    <Text style={{ padding: 10, color: 'white'}}>{usage.symptome_name}</Text>
-                    {/* <Text>Notes : {usage.notes}</Text> */}
-                  </View>
-                ))
-              ) : (
-                <Text>Aucun usage recommandé disponible pour cette plante.</Text>
-              )}
+              <View style={styles.plantCareWrapper}>
+                <Text style={[styles.plantCareTitle, {color: theme.accent}]}>
+                  Temperature
+                </Text>
+                <Text
+                  style={[
+                    styles.plantCareAmount,
+                    {color: theme.textLowContrast},
+                  ]}>
+                  25 - 30 degree celsius
+                </Text>
+              </View>
+
+              <View style={styles.plantCareWrapper}>
+                <Text style={[styles.plantCareTitle, {color: theme.accent}]}>
+                  Water
+                </Text>
+                <Text
+                  style={[
+                    styles.plantCareAmount,
+                    {color: theme.textLowContrast},
+                  ]}>
+                  Medium(2 times/day)
+                </Text>
+              </View>
+
+              <View style={styles.plantCareWrapper}>
+                <Text style={[styles.plantCareTitle, {color: theme.accent}]}>
+                  Humidity
+                </Text>
+                <Text
+                  style={[
+                    styles.plantCareAmount,
+                    {color: theme.textLowContrast},
+                  ]}>
+                  25 - 30 degree celsius
+                </Text>
+              </View>
+
+              <View style={styles.plantCareWrapper}>
+                <Text style={[styles.plantCareTitle, {color: theme.accent}]}>
+                  Sunlight
+                </Text>
+                <Text
+                  style={[
+                    styles.plantCareAmount,
+                    {color: theme.textLowContrast},
+                  ]}>
+                  Very low(Upto 1 hour)
+                </Text>
+              </View>
             </ScrollView>
           </View>
 
           {/* Description */}
-          <Text style={[styles.sectionTitle, { color: theme.textHighContrast }]}>
+          <Text style={[styles.sectionTitle, {color: theme.textHighContrast}]}>
             Description
           </Text>
 
-          <Text style={[styles.description, { color: theme.textLowContrast }]}>
-            {plante && plante.notes ? (<Text>{plante.notes}</Text>) : (<Text>Aucune description pour cette plante</Text>)}
+          <Text style={[styles.description, {color: theme.textLowContrast}]}>
+            Alocasia macrorrhiza 'Stingray' is a unique and striking tropical
+            plant known for its distinct leaf shape resembling a stingray. It
+            belongs to the Araceae family and is native to Southeast Asia.
+            'Stingray' is a cultivar of the Alocasia macrorrhiza species and is
+            popular among plant enthusiasts for its attractive foliage.
           </Text>
         </ScrollView>
       </View>
