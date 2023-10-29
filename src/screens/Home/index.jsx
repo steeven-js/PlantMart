@@ -19,6 +19,8 @@ import GlobalOutletsData from '../../data/GlobalOutletsData';
 import OutletCard from '../../components/cards/OutletCard';
 import { categoryApiUrl } from '../../common/const';
 import { mostPopularApiUrl } from '../../common/const';
+import { bestSellerApiUrl } from '../../common/const';
+import { newArrivalsApiUrl } from '../../common/const';
 import styles from './styles';
 
 // Functional component
@@ -32,6 +34,8 @@ const Home = ({ navigation }) => {
   // UseState
   const [Category, setCategory] = useState([]);
   const [MostPopular, setMostPopular] = useState([]);
+  const [bestSeller, setBestSeller] = useState([]);
+  const [newArrivals, setNewArrivals] = useState([]);
 
   // Fetching data
   const getCategories = async () => {
@@ -55,12 +59,36 @@ const Home = ({ navigation }) => {
     }
   };
 
+  // Fetching data
+  const getBestSeller = async () => {
+    try {
+      const response = await fetch(bestSellerApiUrl);
+      const json = await response.json();
+      setBestSeller(json);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  // Fetching data
+  const getNewArrivals = async () => {
+    try {
+      const response = await fetch(newArrivalsApiUrl);
+      const json = await response.json();
+      setNewArrivals(json);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   // console.log('MostPopular', MostPopular);
 
   // useEffect
   useEffect(() => {
     getCategories();
     getMostPopular();
+    getBestSeller();
+    getNewArrivals();
   }, [])
 
   // Returning
@@ -235,14 +263,12 @@ const Home = ({ navigation }) => {
               contentContainerStyle={
                 styles.horizontalScrollViewContentContainerStyle
               }>
-              {GridViewProductsData.map((product, index) => (
+              {bestSeller.slice(0, 6).map((product, index) => (
                 <View key={index} style={styles.productWrapper}>
                   <GridViewProduct
-                    productImage={product.productImage}
-                    productTitle={product.productTitle}
-                    productPrice={product.productPrice}
-                    rating={product.rating}
-                    onPress={() => navigation.navigate('Product')}
+                    productImage={require('../../assets/images/products/300_x_400.png')}
+                    productTitle={product.name}
+                    onPress={() => navigation.navigate('Plante', { id: product.id })}
                   />
                 </View>
               ))}
@@ -278,14 +304,12 @@ const Home = ({ navigation }) => {
               contentContainerStyle={
                 styles.horizontalScrollViewContentContainerStyle
               }>
-              {GridViewProductsData.map((product, index) => (
+              {newArrivals.slice(0, 6).map((product, index) => (
                 <View key={index} style={styles.productWrapper}>
                   <GridViewProduct
-                    productImage={product.productImage}
-                    productTitle={product.productTitle}
-                    productPrice={product.productPrice}
-                    rating={product.rating}
-                    onPress={() => navigation.navigate('Product')}
+                    productImage={require('../../assets/images/products/300_x_400.png')}
+                    productTitle={product.name}
+                    onPress={() => navigation.navigate('Product', { id: product.id })}
                   />
                 </View>
               ))}
