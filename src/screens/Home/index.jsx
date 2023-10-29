@@ -292,7 +292,9 @@ const Home = ({ navigation }) => {
             <SectionTitle title="New arrivals" />
 
             {/* Link component */}
-            <Link label="See all" />
+            <Link label="See all"
+              onPress={() => navigation.navigate('List View New Arrivals')}
+            />
           </View>
 
           {/* Horizontal scroll view */}

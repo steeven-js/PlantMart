@@ -17,6 +17,7 @@ import {ThemeContext} from '../../../theming/contexts/ThemeContext';
 import ArrowLeftWhiteSvg from '../../../assets/icons/svg/ic_arrow_left_white.svg';
 import styles from '../styles';
 import MostPopular from '../../../screens/MostPopular';
+import ListViewNew from '../../../screens/ListViewNew';
 
 // Creating stack navigator
 const Stack = createStackNavigator();
@@ -70,6 +71,7 @@ const HomeStack = () => {
       <Stack.Screen name="Most Popular" component={MostPopular} />
       <Stack.Screen name="Grid View Popular" component={GridViewPopular} />
       <Stack.Screen name="Grid View Best Seller" component={GridViewBestSeller} />
+      <Stack.Screen name="List View New Arrivals" component={ListViewNew} />
 
       {/* Default */}
       <Stack.Screen name="List View Products" component={ListViewProducts} />
