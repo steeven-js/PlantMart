@@ -1,5 +1,5 @@
-import {useContext, useState} from 'react';
-import {View, TouchableOpacity} from 'react-native';
+import { useContext, useState } from 'react';
+import { View, TouchableOpacity } from 'react-native';
 import Modal from 'react-native-modal';
 import * as Animatable from 'react-native-animatable';
 import Button from '../../components/buttons/Button';
@@ -7,7 +7,7 @@ import TextInput from '../../components/inputs/TextInput';
 import Link from '../../components/links/Link';
 import ScreenInfo from '../../components/paragraphs/ScreenInfo';
 import OrDivider from '../../components/dividers/OrDivider';
-import {ThemeContext} from '../../theming/contexts/ThemeContext';
+import { ThemeContext } from '../../theming/contexts/ThemeContext';
 import FacebookSvg from '../../assets/icons/svg/ic_facebook.svg';
 import TwitterSvg from '../../assets/icons/svg/ic_twitter.svg';
 import GoogleSvg from '../../assets/icons/svg/ic_google.svg';
@@ -24,9 +24,9 @@ import styles from './styles';
 import { useNavigation } from '@react-navigation/native';
 
 // Functional component
-const Login = ({navigation}) => {
+const Login = ({ navigation }) => {
   // Using context
-  const {isLightTheme, lightTheme, darkTheme} = useContext(ThemeContext);
+  const { isLightTheme, lightTheme, darkTheme } = useContext(ThemeContext);
 
   // Storing theme config according to the theme mode
   const theme = isLightTheme ? lightTheme : darkTheme;
@@ -52,9 +52,10 @@ const Login = ({navigation}) => {
 
   const connexion = async () => {
     try {
-      await auth().signInWithEmailAndPassword(email,password)
+      await auth().signInWithEmailAndPassword(email, password)
       console.log('email', email, 'password', password);
-
+      setEmail('');
+      setPassword('');
       // Redirection
       goToHome();
     } catch (error) {
@@ -64,12 +65,12 @@ const Login = ({navigation}) => {
 
   // Returning
   return (
-    <View style={[styles.mainWrapper, {backgroundColor: theme.accent}]}>
+    <View style={[styles.mainWrapper, { backgroundColor: theme.accent }]}>
       {/* Form wrapper */}
       <Animatable.View
         animation="fadeInUp"
         delay={100}
-        style={[styles.formWrapper, {backgroundColor: theme.primary}]}>
+        style={[styles.formWrapper, { backgroundColor: theme.primary }]}>
         {/* Screen title */}
         <Animatable.View animation="fadeInUp" delay={300}>
           <ScreenTitle title="Login" />
@@ -86,11 +87,11 @@ const Login = ({navigation}) => {
 
         {/* Text input component */}
         <Animatable.View animation="fadeInUp" delay={700}>
-          <TextInput 
-          label="Email" 
-          placeholder="Enter your email" 
-          onChangeText={setEmail}
-          value={email}
+          <TextInput
+            label="Email"
+            placeholder="Enter your email"
+            onChangeText={setEmail}
+            value={email}
           />
         </Animatable.View>
 
@@ -189,7 +190,7 @@ const Login = ({navigation}) => {
           backdropColor={theme.accent}
           backdropOpacity={0.9}
           style={styles.modal}>
-          <View style={[styles.modalBody, {backgroundColor: theme.primary}]}>
+          <View style={[styles.modalBody, { backgroundColor: theme.primary }]}>
             {/* Text input */}
             <TextInput label="Email" placeholder="Enter your email" />
 
@@ -201,7 +202,7 @@ const Login = ({navigation}) => {
             <View
               style={[
                 styles.modalCloseIconWrapper,
-                {backgroundColor: theme.secondary},
+                { backgroundColor: theme.secondary },
               ]}>
               <TouchableOpacity activeOpacity={1} onPress={toggleModal}>
                 <CloseSvg

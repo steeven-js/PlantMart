@@ -55,6 +55,7 @@ const CustomDrawerContent = props => {
 
   const logOut = () => {
     auth().signOut();
+    navigation.goBack();
   };
 
   const goToSignIn = () => {
