@@ -1,8 +1,9 @@
-import {useContext} from 'react';
+import { useContext } from 'react';
 import {
   View,
   Image,
   Text,
+  Button,
   ImageBackground,
   TouchableOpacity,
 } from 'react-native';
@@ -16,7 +17,7 @@ import HomeBottomTab from '../../tabs/HomeBottomTab';
 import AuthStack from '../../stacks/AuthStack';
 import SupportStack from '../../stacks/SupportStack';
 import PoliciesStack from '../../stacks/PoliciesStack';
-import {ThemeContext} from '../../../theming/contexts/ThemeContext';
+import { ThemeContext } from '../../../theming/contexts/ThemeContext';
 import HomeLightGreySvg from '../../../assets/icons/svg/ic_home_light_grey.svg';
 import HomeDarkGreenSvg from '../../../assets/icons/svg/ic_home_dark_green.svg';
 import CallLightGreySvg from '../../../assets/icons/svg/ic_call_light_grey.svg';
@@ -27,31 +28,47 @@ import LoginLightGreySvg from '../../../assets/icons/svg/ic_login_light_grey.svg
 import LoginDarkGreenSvg from '../../../assets/icons/svg/ic_login_dark_green.svg';
 import UsersLightGreySvg from '../../../assets/icons/svg/ic_users_light_grey.svg';
 import UsersDarkGreenSvg from '../../../assets/icons/svg/ic_users_dark_green.svg';
-import {STANDARD_VECTOR_ICON_SIZE} from '../../../config/Constants';
+import auth from '@react-native-firebase/auth';
+import { STANDARD_VECTOR_ICON_SIZE } from '../../../config/Constants';
 import Contacts from '../../../screens/Contacts';
 import ArrowLeftWhiteSvg from '../../../assets/icons/svg/ic_arrow_left_white.svg';
 import styles from './styles';
-import {IndependentColors} from '../../../config/Colors';
+import { IndependentColors } from '../../../config/Colors';
+import { useSelector } from 'react-redux';
+import { useNavigation } from '@react-navigation/native';
 
 // Creating drawer navigator
 const Drawer = createDrawerNavigator();
 
 // Custom drawer content component
 const CustomDrawerContent = props => {
+
   // Using context
-  const {isLightTheme, lightTheme, darkTheme} = useContext(ThemeContext);
+  const { isLightTheme, lightTheme, darkTheme } = useContext(ThemeContext);
 
   // Storing theme config according to the theme mode
   const theme = isLightTheme ? lightTheme : darkTheme;
 
+  const userId = useSelector(state => state.user);
+
+  const navigation = useNavigation()
+
+  const logOut = () => {
+    auth().signOut();
+  };
+
+  const goToSignIn = () => {
+    navigation.navigate('AuthStack')
+  }
+
   // Returning
   return (
-    <View style={[styles.mainWrapper, {backgroundColor: theme.primary}]}>
+    <View style={[styles.mainWrapper, { backgroundColor: theme.primary }]}>
       {/* Header image background */}
       <ImageBackground
         source={require('../../../assets/images/backgrounds/liquid-cheese-background.png')}
         style={styles.drawerHeaderImageBackground}>
-        <View style={[styles.logoWrapper, {backgroundColor: theme.primary}]}>
+        <View style={[styles.logoWrapper, { backgroundColor: theme.primary }]}>
           <Image
             source={
               isLightTheme
@@ -80,10 +97,22 @@ const CustomDrawerContent = props => {
           label="App Version 1.0.0 - May, 2023"
           labelStyle={[
             styles.drawerItemLabel,
-            {color: theme.textLowContrast, alignSelf: 'center'},
+            { color: theme.textLowContrast, alignSelf: 'center' },
           ]}
         />
       </View>
+
+
+      {
+        (userId !== null) ?
+          <View>
+            <Button title="Déconnexion" onPress={logOut} />
+          </View>
+          :
+          <View>
+            <Button title="Connexion" onPress={goToSignIn} />
+          </View>
+      }
     </View>
   );
 };
@@ -91,7 +120,7 @@ const CustomDrawerContent = props => {
 // Home drawer
 const HomeDrawer = () => {
   // Using context
-  const {isLightTheme, lightTheme, darkTheme} = useContext(ThemeContext);
+  const { isLightTheme, lightTheme, darkTheme } = useContext(ThemeContext);
 
   // Storing theme config according to the theme mode
   const theme = isLightTheme ? lightTheme : darkTheme;
@@ -99,7 +128,7 @@ const HomeDrawer = () => {
   // Retuning
   return (
     <Drawer.Navigator
-      screenOptions={({navigation}) => ({
+      screenOptions={({ navigation }) => ({
         headerShown: false,
         drawerActiveTintColor: theme.accent,
         drawerInactiveTintColor: theme.textLowContrast,
@@ -136,7 +165,7 @@ const HomeDrawer = () => {
         component={HomeBottomTab}
         options={{
           drawerLabel: 'Home',
-          drawerIcon: ({focused}) =>
+          drawerIcon: ({ focused }) =>
             focused ? (
               <HomeDarkGreenSvg
                 width={STANDARD_VECTOR_ICON_SIZE}
@@ -157,7 +186,7 @@ const HomeDrawer = () => {
         component={SupportStack}
         options={{
           drawerLabel: 'Help & Support',
-          drawerIcon: ({focused}) =>
+          drawerIcon: ({ focused }) =>
             focused ? (
               <CallDarkGreenSvg
                 width={STANDARD_VECTOR_ICON_SIZE}
@@ -178,7 +207,7 @@ const HomeDrawer = () => {
         component={PoliciesStack}
         options={{
           drawerLabel: 'Legal Policies',
-          drawerIcon: ({focused}) =>
+          drawerIcon: ({ focused }) =>
             focused ? (
               <PaperDarkGreenSvg
                 width={STANDARD_VECTOR_ICON_SIZE}
@@ -199,7 +228,7 @@ const HomeDrawer = () => {
         component={AuthStack}
         options={{
           drawerLabel: 'Account Login',
-          drawerIcon: ({focused}) =>
+          drawerIcon: ({ focused }) =>
             focused ? (
               <LoginDarkGreenSvg
                 width={STANDARD_VECTOR_ICON_SIZE}
@@ -221,7 +250,7 @@ const HomeDrawer = () => {
         options={{
           headerShown: true,
           drawerLabel: 'Contacts',
-          drawerIcon: ({focused}) =>
+          drawerIcon: ({ focused }) =>
             focused ? (
               <UsersDarkGreenSvg
                 width={STANDARD_VECTOR_ICON_SIZE}

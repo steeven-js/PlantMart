@@ -1,17 +1,41 @@
-import {useEffect, useState} from 'react';
-import {SafeAreaView} from 'react-native';
+import { useEffect, useState } from 'react';
+import { SafeAreaView } from 'react-native';
 import firestore from '@react-native-firebase/firestore';
-import {NavigationContainer} from '@react-navigation/native';
-import {ThemeContextProvider} from './src/theming/context_providers/ThemeContextProvider';
+import { NavigationContainer } from '@react-navigation/native';
+import { ThemeContextProvider } from './src/theming/context_providers/ThemeContextProvider';
 import Statusbar from './src/components/others/Statusbar';
 import HomeDrawer from './src/navigators/drawers/HomeDrawer';
 import Splash from './src/screens/Splash';
 import AppStyles from './AppStyles';
+import auth from '@react-native-firebase/auth';
+import { resetUser, setUser } from './Redux/User';
+import { useDispatch, useSelector } from 'react-redux';
 
 // Functional component
 const App = () => {
   // Local states
   const [isStarting, setIsStarting] = useState(true);
+
+  const [initializing, setInitializing] = useState(true);
+
+  const onUserStateChange = (user) => {
+    // setUser(user);
+    if (!user) {
+      dispatch(resetUser())
+    } else {
+      dispatch(setUser(user.uid))
+    }
+    if (initializing) setInitializing(false);
+  }
+
+  const user = useSelector(state => state.user);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const subscriber = auth().onAuthStateChanged(onUserStateChange);
+    return subscriber;
+  }, []);
 
   // Hooks
   useEffect(() => {
@@ -21,13 +45,6 @@ const App = () => {
       setIsStarting(false);
     }, 2500);
 
-    const subcriber = firestore()
-      .collection('users')
-      .onSnapshot((documentSnapshot) => {
-        console.log('User data: ', documentSnapshot);
-      });
-
-      return () => subcriber();
   }, []);
 
   // Checking
@@ -38,14 +55,14 @@ const App = () => {
 
   // Returning
   return (
-    <ThemeContextProvider>
-      <NavigationContainer>
-        <Statusbar backgroundColor="#588157" barStyle="light-content" />
-        <SafeAreaView style={AppStyles.safeAreaView}>
-          <HomeDrawer />
-        </SafeAreaView>
-      </NavigationContainer>
-    </ThemeContextProvider>
+      <ThemeContextProvider>
+        <NavigationContainer>
+          <Statusbar backgroundColor="#588157" barStyle="light-content" />
+          <SafeAreaView style={AppStyles.safeAreaView}>
+            <HomeDrawer />
+          </SafeAreaView>
+        </NavigationContainer>
+      </ThemeContextProvider>
   );
 };
 

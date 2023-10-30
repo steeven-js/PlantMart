@@ -16,6 +16,8 @@ import PersonDarkGreenSvg from '../../../assets/icons/svg/ic_person_dark_green.s
 import GearLightGreenSvg from '../../../assets/icons/svg/ic_gear_light_green.svg';
 import GearDarkGreenSvg from '../../../assets/icons/svg/ic_gear_dark_green.svg';
 import styles from './styles';
+import AuthStack from '../../stacks/AuthStack';
+import { useSelector } from 'react-redux';
 
 // Creating bottom tab navigator
 const Tab = createBottomTabNavigator();
@@ -27,6 +29,8 @@ const HomeBottomTab = () => {
 
   // Storing theme config according to the theme mode
   const theme = isLightTheme ? lightTheme : darkTheme;
+
+  const userId = useSelector(state => state.user);
 
   // Screen options
   const screenOptions = {
@@ -86,7 +90,11 @@ const HomeBottomTab = () => {
       />
       <Tab.Screen
         name="My Profile Stack"
-        component={MyProfileStack}
+        component={
+          (userId == null) ?
+          AuthStack :
+          MyProfileStack
+        }
         options={{
           tabBarIcon: ({focused}) =>
             focused ? (

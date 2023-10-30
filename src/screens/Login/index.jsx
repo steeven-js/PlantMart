@@ -19,7 +19,9 @@ import {
 import Question from '../../components/paragraphs/Question';
 import PasswordTextInput from '../../components/inputs/PasswordTextInput';
 import ScreenTitle from '../../components/headings/ScreenTitle';
+import auth from '@react-native-firebase/auth';
 import styles from './styles';
+import { useNavigation } from '@react-navigation/native';
 
 // Functional component
 const Login = ({navigation}) => {
@@ -36,6 +38,28 @@ const Login = ({navigation}) => {
   const toggleModal = () => {
     // Updating states
     setIsModalVisible(prevState => !prevState);
+  };
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  // const navigation = useNavigation()
+
+  const goToHome = () => {
+    navigation.navigate('Home')
+  }
+
+  console.log('email', email, 'password', password);
+
+  const connexion = async () => {
+    try {
+      await auth().signInWithEmailAndPassword(email,password)
+      console.log('email', email, 'password', password);
+
+      // Redirection
+      goToHome();
+    } catch (error) {
+      console.log('error', error)
+    }
   };
 
   // Returning
@@ -62,7 +86,12 @@ const Login = ({navigation}) => {
 
         {/* Text input component */}
         <Animatable.View animation="fadeInUp" delay={700}>
-          <TextInput label="Email" placeholder="Enter your email" />
+          <TextInput 
+          label="Email" 
+          placeholder="Enter your email" 
+          onChangeText={setEmail}
+          value={email}
+          />
         </Animatable.View>
 
         {/* Vertical spacer */}
@@ -73,6 +102,8 @@ const Login = ({navigation}) => {
           <PasswordTextInput
             label="Password"
             placeholder="Enter your password"
+            onChangeText={setPassword}
+            value={password}
           />
         </Animatable.View>
 
@@ -91,7 +122,7 @@ const Login = ({navigation}) => {
         <Animatable.View animation="fadeInUp" delay={1300}>
           <Button
             label="Login"
-            onPress={() => navigation.navigate('OTP Verification')}
+            onPress={connexion}
           />
         </Animatable.View>
 

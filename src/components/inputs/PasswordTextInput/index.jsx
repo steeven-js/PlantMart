@@ -6,7 +6,7 @@ import styles from './styles';
 import {STANDARD_VECTOR_ICON_SIZE} from '../../../config/Constants';
 
 // Functional component
-const PasswordTextInput = ({label, placeholder}) => {
+const PasswordTextInput = ({label, placeholder, value, onChangeText }) => {
   // Using context
   const {isLightTheme, lightTheme, darkTheme} = useContext(ThemeContext);
 
@@ -26,6 +26,8 @@ const PasswordTextInput = ({label, placeholder}) => {
         <RNTextInput
           placeholder={placeholder}
           placeholderTextColor={theme.textLowContrast}
+          value={value}
+          onChangeText={onChangeText}
           style={[
             styles.textInput,
             {
