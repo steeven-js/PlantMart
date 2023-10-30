@@ -11,7 +11,6 @@ import styles from './styles';
 import ScreenTitle from '../../components/headings/ScreenTitle';
 
 // Import Firebase and Firebase Auth
-import { initializeApp } from 'firebase/app';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { getFirestore, doc, setDoc } from 'firebase/firestore';
 
@@ -37,10 +36,6 @@ const Register = ({ navigation }) => {
         console.log('userAuth', userAuth);
         const uid = userAuth.user.uid;
 
-        // Now that you have the userAuth, you can interact with Firestore or other Firebase services if needed.
-        // Ensure that Firestore is properly imported and initialized.
-
-        // Example Firestore code:
         const firestore = getFirestore(app);
         await setDoc(doc(firestore, 'user', uid), { name, email });
       }
