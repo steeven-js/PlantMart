@@ -14,6 +14,7 @@ const ListViewProduct = ({
   productImage,
   productTitle,
   productPrice,
+  rating,
   isLastItem,
   onPress,
 }) => {
@@ -53,6 +54,15 @@ const ListViewProduct = ({
             <Text style={[styles.productPrice, {color: theme.accent}]}>
               {productPrice}
             </Text>
+            <View style={styles.starAndRatingWrapper}>
+              <SvgStar
+                width={STANDARD_VECTOR_ICON_SIZE * 0.75}
+                height={STANDARD_VECTOR_ICON_SIZE * 0.75}
+              />
+              <Text style={[styles.rating, {color: theme.accent}]}>
+                {rating}
+              </Text>
+            </View>
           </View>
         </View>
       </View>

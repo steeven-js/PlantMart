@@ -1,18 +1,18 @@
-import { useContext, useCallback } from 'react';
-import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
+import {useContext, useCallback} from 'react';
+import {View, Text, ScrollView, TouchableOpacity} from 'react-native';
 import * as Animatable from 'react-native-animatable';
-import { ThemeContext } from '../../theming/contexts/ThemeContext';
+import {ThemeContext} from '../../theming/contexts/ThemeContext';
 import SmileSvg from '../../assets/icons/svg/ic_smile_dark_green.svg';
 import ChatSvg from '../../assets/icons/svg/ic_chat_dark_green.svg';
 import MailSvg from '../../assets/icons/svg/ic_mail_dark_green.svg';
 import InfoSvg from '../../assets/icons/svg/ic_info_dark_green.svg';
 import styles from './styles';
-import { STANDARD_VECTOR_ICON_SIZE } from '../../config/Constants';
+import {STANDARD_VECTOR_ICON_SIZE} from '../../config/Constants';
 
 // Functional component
-const Support = ({ navigation }) => {
+const Support = ({navigation}) => {
   // Using context
-  const { isLightTheme, lightTheme, darkTheme } = useContext(ThemeContext);
+  const {isLightTheme, lightTheme, darkTheme} = useContext(ThemeContext);
 
   // Getting theme config according to the theme mode
   const theme = isLightTheme ? lightTheme : darkTheme;
@@ -37,18 +37,18 @@ const Support = ({ navigation }) => {
 
   // Returning
   return (
-    <View style={[styles.mainWrapper, { backgroundColor: theme.primary }]}>
+    <View style={[styles.mainWrapper, {backgroundColor: theme.primary}]}>
       {/* Header */}
       <Animatable.View
         delay={100}
         animation="fadeInDown"
-        style={[styles.header, { backgroundColor: theme.accent }]}>
+        style={[styles.header, {backgroundColor: theme.accent}]}>
         {/* Title */}
         <Animatable.Text
           delay={300}
           animation="fadeInUp"
           style={styles.needHelpLabel}>
-          Besoin d'aide?
+          Need Help?
         </Animatable.Text>
 
         {/* Title */}
@@ -90,8 +90,8 @@ const Support = ({ navigation }) => {
             <Animatable.Text
               delay={1500}
               animation="fadeInUp"
-              style={[styles.question, { color: theme.accent }]}>
-              Dites-nous comment nous pouvons vous aider ?
+              style={[styles.question, {color: theme.accent}]}>
+              Tell us how may we help you?
             </Animatable.Text>
 
             <Animatable.View delay={1700} animation="fadeInUp">
@@ -105,8 +105,8 @@ const Support = ({ navigation }) => {
           <Animatable.Text
             delay={1900}
             animation="fadeInUp"
-            style={[styles.info, { color: theme.textLowContrast }]}>
-            Notre équipe de super-héros est prête à intervenir{'\n'}pour le service et le support !
+            style={[styles.info, {color: theme.textLowContrast}]}>
+            Our crew of superheroes are standing by {'\n'}for service & support!
           </Animatable.Text>
         </Animatable.View>
 
@@ -116,7 +116,7 @@ const Support = ({ navigation }) => {
           animation="fadeInUp"
           style={[
             styles.scrollViewWrapper,
-            { backgroundColor: theme.secondary },
+            {backgroundColor: theme.secondary},
           ]}>
           {/* Support list items scroll view */}
           <ScrollView
@@ -129,14 +129,14 @@ const Support = ({ navigation }) => {
                 activeOpacity={1}
                 style={[
                   styles.supportListItem,
-                  { backgroundColor: theme.primary },
+                  {backgroundColor: theme.primary},
                 ]}
                 onPress={_navigateToChatsScreen}>
                 {/* Support icon wrapper */}
                 <View
                   style={[
                     styles.supportIconWrapper,
-                    { backgroundColor: theme.accentLightest },
+                    {backgroundColor: theme.accentLightest},
                   ]}>
                   <ChatSvg
                     width={STANDARD_VECTOR_ICON_SIZE * 1.5}
@@ -149,7 +149,7 @@ const Support = ({ navigation }) => {
                   <Text
                     style={[
                       styles.supportTypeTitle,
-                      { color: theme.textHighContrast },
+                      {color: theme.textHighContrast},
                     ]}>
                     Live Chat
                   </Text>
@@ -158,9 +158,9 @@ const Support = ({ navigation }) => {
                   <Text
                     style={[
                       styles.supportTypeTitleInfo,
-                      { color: theme.textLowContrast },
+                      {color: theme.textLowContrast},
                     ]}>
-                    Commencez une conversation dès maintenant !
+                    Start a Conversation right now!
                   </Text>
                 </View>
               </TouchableOpacity>
@@ -172,14 +172,14 @@ const Support = ({ navigation }) => {
                 activeOpacity={1}
                 style={[
                   styles.supportListItem,
-                  { backgroundColor: theme.primary },
+                  {backgroundColor: theme.primary},
                 ]}
                 onPress={_navigateToContactScreen}>
                 {/* Support icon wrapper */}
                 <View
                   style={[
                     styles.supportIconWrapper,
-                    { backgroundColor: theme.accentLightest },
+                    {backgroundColor: theme.accentLightest},
                   ]}>
                   <MailSvg
                     width={STANDARD_VECTOR_ICON_SIZE * 1.5}
@@ -192,19 +192,19 @@ const Support = ({ navigation }) => {
                   <Text
                     style={[
                       styles.supportTypeTitle,
-                      { color: theme.textHighContrast },
+                      {color: theme.textHighContrast},
                     ]}>
-                    Email
+                    Mail Us
                   </Text>
                   {/* Subtitle */}
                   <Text
                     style={[
                       styles.supportTypeTitleInfo,
-                      { color: theme.textLowContrast },
+                      {color: theme.textLowContrast},
                     ]}>
                     Mail us at{' '}
-                    <Text style={[styles.mailId, { color: theme.accent }]}>
-                      jacques@steeven.com
+                    <Text style={[styles.mailId, {color: theme.accent}]}>
+                      suuport@foodbazaar.com
                     </Text>
                   </Text>
                 </View>
@@ -217,14 +217,14 @@ const Support = ({ navigation }) => {
                 activeOpacity={1}
                 style={[
                   styles.supportListItem,
-                  { backgroundColor: theme.primary },
+                  {backgroundColor: theme.primary},
                 ]}
                 onPress={_navigateToFaqsScreen}>
                 {/* Support icon wrapper */}
                 <View
                   style={[
                     styles.supportIconWrapper,
-                    { backgroundColor: theme.accentLightest },
+                    {backgroundColor: theme.accentLightest},
                   ]}>
                   <InfoSvg
                     width={STANDARD_VECTOR_ICON_SIZE * 1.5}
@@ -237,7 +237,7 @@ const Support = ({ navigation }) => {
                   <Text
                     style={[
                       styles.supportTypeTitle,
-                      { color: theme.textHighContrast },
+                      {color: theme.textHighContrast},
                     ]}>
                     FAQs
                   </Text>
@@ -245,9 +245,9 @@ const Support = ({ navigation }) => {
                   <Text
                     style={[
                       styles.supportTypeTitleInfo,
-                      { color: theme.textLowContrast },
+                      {color: theme.textLowContrast},
                     ]}>
-                    Trouvez des réponses intelligentes instantanément !
+                    Find intelligent answers instantly!
                   </Text>
                 </View>
               </TouchableOpacity>

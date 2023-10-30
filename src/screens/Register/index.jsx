@@ -1,53 +1,50 @@
-import React, { useContext, useState, useEffect } from 'react';
-import { View } from 'react-native';
+import {useContext, useState} from 'react';
+import {View} from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import Button from '../../components/buttons/Button';
 import TextInput from '../../components/inputs/TextInput';
 import Link from '../../components/links/Link';
 import Question from '../../components/paragraphs/Question';
 import ScreenInfo from '../../components/paragraphs/ScreenInfo';
-import { ThemeContext } from '../../theming/contexts/ThemeContext';
+import {ThemeContext} from '../../theming/contexts/ThemeContext';
 import styles from './styles';
 import ScreenTitle from '../../components/headings/ScreenTitle';
-
-// Import Firebase and Firebase Auth
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
-import { getFirestore, doc, setDoc } from 'firebase/firestore';
-
-import app from '../../../firebase';
+import auth from '@react-native-firebase/auth';
+import firestore from '@react-native-firebase/firestore';
 
 // Functional component
-const Register = ({ navigation }) => {
+const Register = ({navigation}) => {
   // Using context
-  const { isLightTheme, lightTheme, darkTheme } = useContext(ThemeContext);
+  const {isLightTheme, lightTheme, darkTheme} = useContext(ThemeContext);
 
   // Storing theme config according to the theme mode
   const theme = isLightTheme ? lightTheme : darkTheme;
 
-  const auth = getAuth(app); // Initialize Firebase Auth
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const register = async () => {
+  const Inscription = async () => {
     try {
-      if (email !== '' && password !== '') {
-        const userAuth = await createUserWithEmailAndPassword(auth, email, password);
+      if (email != '' && password != '') {
+        const userAuth = await auth().createUserWithEmailAndPassword(
+          email,
+          password,
+        );
         console.log('userAuth', userAuth);
         const uid = userAuth.user.uid;
 
-        const firestore = getFirestore(app);
-        await setDoc(doc(firestore, 'user', uid), { name, email });
+        // Enregistrement de l'utilisateur en base de donnée à l'aide de son UID.
+        await firestore().collection('users').doc(uid).set({
+          uid: uid,
+          email: email
+        });
       }
+      console.log('email', email , 'password', password);
     } catch (error) {
       console.log('error', error);
     }
   };
-
-  // Use useEffect to ensure Firebase is ready before registering
-  useEffect(() => {
-    register();
-  }, []);
 
   // Returning
   return (
@@ -113,7 +110,7 @@ const Register = ({ navigation }) => {
 
         {/* Button component */}
         <Animatable.View animation="fadeInUp" delay={1300}>
-          <Button label="Inscription" onPress={register} />
+          <Button label="Inscription" onPress={Inscription} />
         </Animatable.View>
 
         {/* Vertical spacer */}

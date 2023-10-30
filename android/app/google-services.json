@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "743439045330",
-    "project_id": "plantjsprod",
-    "storage_bucket": "plantjsprod.appspot.com"
+    "project_number": "952998531433",
+    "project_id": "plantmart-93e98",
+    "storage_bucket": "plantmart-93e98.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:743439045330:android:cad01aba838730f33ad30b",
+        "mobilesdk_app_id": "1:952998531433:android:f0801adad1755396fb2df8",
         "android_client_info": {
-          "package_name": "com.plantjsprod"
+          "package_name": "com.plantmart"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAhAmnnqdEt3U6eS6HPq9rDPvcf2guh6QU"
+          "current_key": "AIzaSyCTOO3ILPesasjZNiHmytKA_KUrDXnx-aU"
         }
       ],
       "services": {

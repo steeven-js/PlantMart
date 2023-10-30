@@ -135,7 +135,7 @@ const HomeDrawer = () => {
         name="HomeBottomTab"
         component={HomeBottomTab}
         options={{
-          drawerLabel: 'Accueil',
+          drawerLabel: 'Home',
           drawerIcon: ({focused}) =>
             focused ? (
               <HomeDarkGreenSvg
@@ -156,7 +156,7 @@ const HomeDrawer = () => {
         name="SupportStack"
         component={SupportStack}
         options={{
-          drawerLabel: 'Aide & Support',
+          drawerLabel: 'Help & Support',
           drawerIcon: ({focused}) =>
             focused ? (
               <CallDarkGreenSvg
@@ -177,7 +177,7 @@ const HomeDrawer = () => {
         name="PoliciesStack"
         component={PoliciesStack}
         options={{
-          drawerLabel: 'Conditions légales',
+          drawerLabel: 'Legal Policies',
           drawerIcon: ({focused}) =>
             focused ? (
               <PaperDarkGreenSvg
@@ -198,7 +198,7 @@ const HomeDrawer = () => {
         name="AuthStack"
         component={AuthStack}
         options={{
-          drawerLabel: 'Connexion au compte',
+          drawerLabel: 'Account Login',
           drawerIcon: ({focused}) =>
             focused ? (
               <LoginDarkGreenSvg

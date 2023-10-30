@@ -27,7 +27,7 @@ const ResetPassword = () => {
         style={[styles.formWrapper, {backgroundColor: theme.primary}]}>
         {/* Screen title */}
         <Animatable.View animation="fadeInUp" delay={300}>
-          <ScreenTitle title="Réinitialisation du mot de passe" />
+          <ScreenTitle title="Reset Password" />
         </Animatable.View>
 
         {/* Screen info component */}
@@ -82,7 +82,7 @@ const ResetPassword = () => {
 
         {/* Button component */}
         <Animatable.View animation="fadeInUp" delay={1500}>
-          <Button label="Réinitialisation du mot de passe" />
+          <Button label="Reset Password" />
         </Animatable.View>
       </Animatable.View>
     </View>

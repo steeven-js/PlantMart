@@ -48,7 +48,7 @@ const Settings = ({navigation}) => {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.scrollViewContentContainerStyle}>
         {/* Section title component */}
-        <SectionTitle title="Mon compte" />
+        <SectionTitle title="Account" />
 
         {/* Vertical spacer */}
         <View style={styles.verticalSpacer} />
@@ -61,8 +61,8 @@ const Settings = ({navigation}) => {
               height={STANDARD_VECTOR_ICON_SIZE}
             />
           }
-          label="Modifier le profil"
-          onPress={() => navigation.navigate('Modifier le profil')}
+          label="Edit profile"
+          onPress={() => navigation.navigate('Edit Profile')}
         />
 
         {/* Vertical spacer */}
@@ -76,8 +76,8 @@ const Settings = ({navigation}) => {
               height={STANDARD_VECTOR_ICON_SIZE}
             />
           }
-          label="Réinitialisation du mot de passe"
-          onPress={() => navigation.navigate('Réinitialisation du mot de passe')}
+          label="Reset password"
+          onPress={() => navigation.navigate('Reset Password')}
         />
 
         {/* Vertical spacer */}
@@ -99,7 +99,7 @@ const Settings = ({navigation}) => {
         <View style={styles.verticalSpacer} />
 
         {/* Section title component */}
-        <SectionTitle title="Messagerie" />
+        <SectionTitle title="Messaging" />
 
         {/* Vertical spacer */}
         <View style={styles.verticalSpacer} />
@@ -147,7 +147,7 @@ const Settings = ({navigation}) => {
               height={STANDARD_VECTOR_ICON_SIZE}
             />
           }
-          label="Son"
+          label="Sound"
         />
 
         {/* Vertical spacer */}
@@ -161,22 +161,22 @@ const Settings = ({navigation}) => {
               height={STANDARD_VECTOR_ICON_SIZE}
             />
           }
-          label="Voix"
+          label="Voice"
         />
 
         {/* Vertical spacer */}
         <View style={styles.verticalSpacer} />
 
         {/* Section title component */}
-        <SectionTitle title="Apparence" />
+        <SectionTitle title="Appearance" />
 
         {/* Vertical spacer */}
         <View style={styles.verticalSpacer} />
 
         {/* Switch list */}
         <SwitchList
-          label="Thème de l'application"
-          labelInfo={`Basculer vers le mode: ${isLightTheme ? 'dark' : 'light'} `}
+          label="App Theme"
+          labelInfo={`Switch to ${isLightTheme ? 'dark' : 'light'} mode.`}
           trackActiveColor={Track_Active_Color}
           trackInactiveColor={Track_Inactive_Color}
           thumbActiveColor={Thumb_Active_Color}

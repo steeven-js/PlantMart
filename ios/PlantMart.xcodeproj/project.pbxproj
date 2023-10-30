@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* PlantJsprodTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* PlantJsprodTests.m */; };
+		00E356F31AD99517003FC87E /* PlantMartTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* PlantMartTests.m */; };
 		00ED6D34EF7947FBB330E328 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 26625074301B47F4BA0BB30B /* Poppins-Medium.ttf */; };
 		0A6EA2769F504A17B4106ECA /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F204F6DAA9024E0C96BE1464 /* Poppins-Bold.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
@@ -15,8 +15,8 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		66BB3ED823E94E70A90230BC /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 451B6B356FF34013BE532F93 /* Poppins-SemiBold.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		AA50691E1435BC9D9CD78BE9 /* libPods-PlantJsprod.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A1F903BB7188F18C3CE3D8 /* libPods-PlantJsprod.a */; };
-		B508CEA6F583BD4419B7A12F /* libPods-PlantJsprod-PlantJsprodTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BA38FE5674AF3CBD20967FC /* libPods-PlantJsprod-PlantJsprodTests.a */; };
+		AA50691E1435BC9D9CD78BE9 /* libPods-PlantMart.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A1F903BB7188F18C3CE3D8 /* libPods-PlantMart.a */; };
+		B508CEA6F583BD4419B7A12F /* libPods-PlantMart-PlantMartTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BA38FE5674AF3CBD20967FC /* libPods-PlantMart-PlantMartTests.a */; };
 		CB9575DC75B44DF88C45B772 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3DD414F6AFCE41F18AC86EF2 /* Poppins-Regular.ttf */; };
 /* End PBXBuildFile section */
 
@@ -26,32 +26,32 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = "PlantJsprod";
+			remoteInfo = PlantMart;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00E356EE1AD99517003FC87E /* PlantJsprodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PlantJsprodTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* PlantMartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlantMartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* PlantJsprodTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "PlantJsprodTests.m"; sourceTree = "<group>"; };
-		053716C984F228FE9DD2D882 /* Pods-PlantJsprod-PlantJsprodTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlantJsprod-PlantJsprodTests.release.xcconfig"; path = "Target Support Files/Pods-PlantJsprod-PlantJsprodTests/Pods-PlantJsprod-PlantJsprodTests.release.xcconfig"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* PlantJsprod.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PlantJsprod.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "PlantJsprod/AppDelegate.h"; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = "PlantJsprod/AppDelegate.mm"; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "PlantJsprod/Images.xcassets"; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "PlantJsprod/Info.plist"; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "PlantJsprod/main.m"; sourceTree = "<group>"; };
-		1E4AC8E802B94BFD3F03FF9E /* Pods-PlantJsprod.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlantJsprod.debug.xcconfig"; path = "Target Support Files/Pods-PlantJsprod/Pods-PlantJsprod.debug.xcconfig"; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* PlantMartTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlantMartTests.m; sourceTree = "<group>"; };
+		053716C984F228FE9DD2D882 /* Pods-PlantMart-PlantMartTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlantMart-PlantMartTests.release.xcconfig"; path = "Target Support Files/Pods-PlantMart-PlantMartTests/Pods-PlantMart-PlantMartTests.release.xcconfig"; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* PlantMart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantMart.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = PlantMart/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = PlantMart/AppDelegate.mm; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = PlantMart/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = PlantMart/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = PlantMart/main.m; sourceTree = "<group>"; };
+		1E4AC8E802B94BFD3F03FF9E /* Pods-PlantMart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlantMart.debug.xcconfig"; path = "Target Support Files/Pods-PlantMart/Pods-PlantMart.debug.xcconfig"; sourceTree = "<group>"; };
 		26625074301B47F4BA0BB30B /* Poppins-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Medium.ttf"; path = "../src/assets/fonts/Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		3DD414F6AFCE41F18AC86EF2 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Regular.ttf"; path = "../src/assets/fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; };
-		42A1F903BB7188F18C3CE3D8 /* libPods-PlantJsprod.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlantJsprod.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		42A1F903BB7188F18C3CE3D8 /* libPods-PlantMart.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlantMart.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		451B6B356FF34013BE532F93 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-SemiBold.ttf"; path = "../src/assets/fonts/Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
-		4BA38FE5674AF3CBD20967FC /* libPods-PlantJsprod-PlantJsprodTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlantJsprod-PlantJsprodTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = "PlantJsprod/LaunchScreen.storyboard"; sourceTree = "<group>"; };
-		D2C1C36A527B4FF93CC3444A /* Pods-PlantJsprod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlantJsprod.release.xcconfig"; path = "Target Support Files/Pods-PlantJsprod/Pods-PlantJsprod.release.xcconfig"; sourceTree = "<group>"; };
+		4BA38FE5674AF3CBD20967FC /* libPods-PlantMart-PlantMartTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlantMart-PlantMartTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = PlantMart/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D2C1C36A527B4FF93CC3444A /* Pods-PlantMart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlantMart.release.xcconfig"; path = "Target Support Files/Pods-PlantMart/Pods-PlantMart.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F204F6DAA9024E0C96BE1464 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Bold.ttf"; path = "../src/assets/fonts/Poppins-Bold.ttf"; sourceTree = "<group>"; };
-		F5EEE477B9C7CE9F7F1186CA /* Pods-PlantJsprod-PlantJsprodTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlantJsprod-PlantJsprodTests.debug.xcconfig"; path = "Target Support Files/Pods-PlantJsprod-PlantJsprodTests/Pods-PlantJsprod-PlantJsprodTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F5EEE477B9C7CE9F7F1186CA /* Pods-PlantMart-PlantMartTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlantMart-PlantMartTests.debug.xcconfig"; path = "Target Support Files/Pods-PlantMart-PlantMartTests/Pods-PlantMart-PlantMartTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B508CEA6F583BD4419B7A12F /* libPods-PlantJsprod-PlantJsprodTests.a in Frameworks */,
+				B508CEA6F583BD4419B7A12F /* libPods-PlantMart-PlantMartTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,20 +67,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA50691E1435BC9D9CD78BE9 /* libPods-PlantJsprod.a in Frameworks */,
+				AA50691E1435BC9D9CD78BE9 /* libPods-PlantMart.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* PlantJsprodTests */ = {
+		00E356EF1AD99517003FC87E /* PlantMartTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* PlantJsprodTests.m */,
+				00E356F21AD99517003FC87E /* PlantMartTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = "PlantJsprodTests";
+			path = PlantMartTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -91,7 +91,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* PlantJsprod */ = {
+		13B07FAE1A68108700A75B9A /* PlantMart */ = {
 			isa = PBXGroup;
 			children = (
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -101,7 +101,7 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = "PlantJsprod";
+			name = PlantMart;
 			sourceTree = "<group>";
 		};
 		28FF33C19F28454093D14E56 /* Resources */ = {
@@ -119,8 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				42A1F903BB7188F18C3CE3D8 /* libPods-PlantJsprod.a */,
-				4BA38FE5674AF3CBD20967FC /* libPods-PlantJsprod-PlantJsprodTests.a */,
+				42A1F903BB7188F18C3CE3D8 /* libPods-PlantMart.a */,
+				4BA38FE5674AF3CBD20967FC /* libPods-PlantMart-PlantMartTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -135,9 +135,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* PlantJsprod */,
+				13B07FAE1A68108700A75B9A /* PlantMart */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* PlantJsprodTests */,
+				00E356EF1AD99517003FC87E /* PlantMartTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
@@ -151,8 +151,8 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* PlantJsprod.app */,
-				00E356EE1AD99517003FC87E /* PlantJsprodTests.xctest */,
+				13B07F961A680F5B00A75B9A /* PlantMart.app */,
+				00E356EE1AD99517003FC87E /* PlantMartTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -160,10 +160,10 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1E4AC8E802B94BFD3F03FF9E /* Pods-PlantJsprod.debug.xcconfig */,
-				D2C1C36A527B4FF93CC3444A /* Pods-PlantJsprod.release.xcconfig */,
-				F5EEE477B9C7CE9F7F1186CA /* Pods-PlantJsprod-PlantJsprodTests.debug.xcconfig */,
-				053716C984F228FE9DD2D882 /* Pods-PlantJsprod-PlantJsprodTests.release.xcconfig */,
+				1E4AC8E802B94BFD3F03FF9E /* Pods-PlantMart.debug.xcconfig */,
+				D2C1C36A527B4FF93CC3444A /* Pods-PlantMart.release.xcconfig */,
+				F5EEE477B9C7CE9F7F1186CA /* Pods-PlantMart-PlantMartTests.debug.xcconfig */,
+				053716C984F228FE9DD2D882 /* Pods-PlantMart-PlantMartTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -171,9 +171,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* PlantJsprodTests */ = {
+		00E356ED1AD99517003FC87E /* PlantMartTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "PlantJsprodTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "PlantMartTests" */;
 			buildPhases = (
 				CE7CA44144ECA54657E55011 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -187,14 +187,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = "PlantJsprodTests";
-			productname = "PlantJsprodTests";
-			productReference = 00E356EE1AD99517003FC87E /* PlantJsprodTests.xctest */;
+			name = PlantMartTests;
+			productName = PlantMartTests;
+			productReference = 00E356EE1AD99517003FC87E /* PlantMartTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* PlantJsprod */ = {
+		13B07F861A680F5B00A75B9A /* PlantMart */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "PlantJsprod" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "PlantMart" */;
 			buildPhases = (
 				9C64CA6386BF4DF371AAFF51 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -209,9 +209,9 @@
 			);
 			dependencies = (
 			);
-			name = "PlantJsprod";
-			productName = "PlantJsprod";
-			productReference = 13B07F961A680F5B00A75B9A /* PlantJsprod.app */;
+			name = PlantMart;
+			productName = PlantMart;
+			productReference = 13B07F961A680F5B00A75B9A /* PlantMart.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -231,7 +231,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "PlantJsprod" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "PlantMart" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -244,8 +244,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* PlantJsprod */,
-				00E356ED1AD99517003FC87E /* PlantJsprodTests */,
+				13B07F861A680F5B00A75B9A /* PlantMart */,
+				00E356ED1AD99517003FC87E /* PlantMartTests */,
 			);
 		};
 /* End PBXProject section */
@@ -296,15 +296,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PlantJsprod-PlantJsprodTests/Pods-PlantJsprod-PlantJsprodTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-PlantMart-PlantMartTests/Pods-PlantMart-PlantMartTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PlantJsprod-PlantJsprodTests/Pods-PlantJsprod-PlantJsprodTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-PlantMart-PlantMartTests/Pods-PlantMart-PlantMartTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlantJsprod-PlantJsprodTests/Pods-PlantJsprod-PlantJsprodTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlantMart-PlantMartTests/Pods-PlantMart-PlantMartTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		966AEE6F926EC5DB53697CFB /* [CP] Copy Pods Resources */ = {
@@ -313,15 +313,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PlantJsprod/Pods-PlantJsprod-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-PlantMart/Pods-PlantMart-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PlantJsprod/Pods-PlantJsprod-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-PlantMart/Pods-PlantMart-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlantJsprod/Pods-PlantJsprod-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlantMart/Pods-PlantMart-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9C64CA6386BF4DF371AAFF51 /* [CP] Check Pods Manifest.lock */ = {
@@ -339,7 +339,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-PlantJsprod-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-PlantMart-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -352,15 +352,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PlantJsprod-PlantJsprodTests/Pods-PlantJsprod-PlantJsprodTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-PlantMart-PlantMartTests/Pods-PlantMart-PlantMartTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PlantJsprod-PlantJsprodTests/Pods-PlantJsprod-PlantJsprodTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-PlantMart-PlantMartTests/Pods-PlantMart-PlantMartTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlantJsprod-PlantJsprodTests/Pods-PlantJsprod-PlantJsprodTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlantMart-PlantMartTests/Pods-PlantMart-PlantMartTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CE7CA44144ECA54657E55011 /* [CP] Check Pods Manifest.lock */ = {
@@ -378,7 +378,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-PlantJsprod-PlantJsprodTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-PlantMart-PlantMartTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -391,15 +391,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PlantJsprod/Pods-PlantJsprod-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-PlantMart/Pods-PlantMart-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PlantJsprod/Pods-PlantJsprod-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-PlantMart/Pods-PlantMart-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlantJsprod/Pods-PlantJsprod-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlantMart/Pods-PlantMart-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -428,7 +428,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* PlantJsprodTests.m in Sources */,
+				00E356F31AD99517003FC87E /* PlantMartTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,7 +446,7 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* PlantJsprod */;
+			target = 13B07F861A680F5B00A75B9A /* PlantMart */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -454,14 +454,14 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F5EEE477B9C7CE9F7F1186CA /* Pods-PlantJsprod-PlantJsprodTests.debug.xcconfig */;
+			baseConfigurationReference = F5EEE477B9C7CE9F7F1186CA /* Pods-PlantMart-PlantMartTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "PlantJsprodTests/Info.plist";
+				INFOPLIST_FILE = PlantMartTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -475,17 +475,17 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlantJsprod.app/PlantJsprod";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlantMart.app/PlantMart";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 053716C984F228FE9DD2D882 /* Pods-PlantJsprod-PlantJsprodTests.release.xcconfig */;
+			baseConfigurationReference = 053716C984F228FE9DD2D882 /* Pods-PlantMart-PlantMartTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = "PlantJsprodTests/Info.plist";
+				INFOPLIST_FILE = PlantMartTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -499,20 +499,19 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlantJsprod.app/PlantJsprod";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlantMart.app/PlantMart";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1E4AC8E802B94BFD3F03FF9E /* Pods-PlantJsprod.debug.xcconfig */;
+			baseConfigurationReference = 1E4AC8E802B94BFD3F03FF9E /* Pods-PlantMart.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = "PlantJsprod/Info.plist";
-             INFOPLIST_KEY_CFBundleDisplayName = "PlantJsprod";
+				INFOPLIST_FILE = PlantMart/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -524,7 +523,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "PlantJsprod";
+				PRODUCT_NAME = PlantMart;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -533,13 +532,12 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D2C1C36A527B4FF93CC3444A /* Pods-PlantJsprod.release.xcconfig */;
+			baseConfigurationReference = D2C1C36A527B4FF93CC3444A /* Pods-PlantMart.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				INFOPLIST_FILE = "PlantJsprod/Info.plist";
-             INFOPLIST_KEY_CFBundleDisplayName = "PlantJsprod";
+				INFOPLIST_FILE = PlantMart/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -551,7 +549,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "PlantJsprod";
+				PRODUCT_NAME = PlantMart;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -697,7 +695,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "PlantJsprodTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "PlantMartTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -706,7 +704,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "PlantJsprod" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "PlantMart" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -715,7 +713,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "PlantJsprod" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "PlantMart" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

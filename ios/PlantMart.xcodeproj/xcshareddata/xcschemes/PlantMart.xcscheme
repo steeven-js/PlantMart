@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "PlantJsprod.app"
-               BlueprintName = "PlantJsprod"
-               ReferencedContainer = "container:PlantJsprod.xcodeproj">
+               BuildableName = "PlantMart.app"
+               BlueprintName = "PlantMart"
+               ReferencedContainer = "container:PlantMart.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "PlantJsprodTests.xctest"
-               BlueprintName = "PlantJsprodTests"
-               ReferencedContainer = "container:PlantJsprod.xcodeproj">
+               BuildableName = "PlantMartTests.xctest"
+               BlueprintName = "PlantMartTests"
+               ReferencedContainer = "container:PlantMart.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "PlantJsprod.app"
-            BlueprintName = "PlantJsprod"
-            ReferencedContainer = "container:PlantJsprod.xcodeproj">
+            BuildableName = "PlantMart.app"
+            BlueprintName = "PlantMart"
+            ReferencedContainer = "container:PlantMart.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "PlantJsprod.app"
-            BlueprintName = "PlantJsprod"
-            ReferencedContainer = "container:PlantJsprod.xcodeproj">
+            BuildableName = "PlantMart.app"
+            BlueprintName = "PlantMart"
+            ReferencedContainer = "container:PlantMart.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

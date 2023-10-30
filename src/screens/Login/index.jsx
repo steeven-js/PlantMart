@@ -53,7 +53,7 @@ const Login = ({navigation}) => {
 
         {/* Screen info component */}
         <Animatable.View animation="fadeInUp" delay={500}>
-          <ScreenInfo info="Salut, saisissez vos informations de compte pour vous connecter à votre compte." />
+          <ScreenInfo info="hey, enter your account details to get log in to your account." />
         </Animatable.View>
 
         {/* Vertical spacer */}
@@ -139,12 +139,12 @@ const Login = ({navigation}) => {
           delay={2300}
           style={styles.questionAndLinkWrapper}>
           {/* Question component */}
-          <Question question="Vous n'avez pas de compte ?" />
+          <Question question="Don't have an account?" />
 
           {/* Link component */}
           <Link
-            label="Inscription"
-            onPress={() => navigation.navigate('Inscription')}
+            label="Register"
+            onPress={() => navigation.navigate('Register')}
           />
         </Animatable.View>
       </Animatable.View>

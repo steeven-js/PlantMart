@@ -20,13 +20,6 @@ const GlobalOutletsData = [
     priceRange: '$130.00 - $300.00',
     rating: 5,
   },
-  {
-    id: 4,
-    outletImage: require('../assets/images/outlets/753_x_480.png'),
-    outletName: 'Plant Delaware Gersey',
-    priceRange: '$150.00 - $350.00',
-    rating: 5,
-  },
 ];
 
 // Exporting

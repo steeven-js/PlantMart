@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react';
 import {SafeAreaView} from 'react-native';
+import firestore from '@react-native-firebase/firestore';
 import {NavigationContainer} from '@react-navigation/native';
 import {ThemeContextProvider} from './src/theming/context_providers/ThemeContextProvider';
 import Statusbar from './src/components/others/Statusbar';
@@ -19,6 +20,14 @@ const App = () => {
       // Updating states
       setIsStarting(false);
     }, 2500);
+
+    const subcriber = firestore()
+      .collection('users')
+      .onSnapshot((documentSnapshot) => {
+        console.log('User data: ', documentSnapshot);
+      });
+
+      return () => subcriber();
   }, []);
 
   // Checking
