@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { View } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import Button from '../../components/buttons/Button';
@@ -10,6 +10,13 @@ import { ThemeContext } from '../../theming/contexts/ThemeContext';
 import styles from './styles';
 import ScreenTitle from '../../components/headings/ScreenTitle';
 
+// Import Firebase and Firebase Auth
+import { initializeApp } from 'firebase/app';
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import { getFirestore, doc, setDoc } from 'firebase/firestore';
+
+import app from '../../../firebase';
+
 // Functional component
 const Register = ({ navigation }) => {
   // Using context
@@ -18,14 +25,34 @@ const Register = ({ navigation }) => {
   // Storing theme config according to the theme mode
   const theme = isLightTheme ? lightTheme : darkTheme;
 
+  const auth = getAuth(app); // Initialize Firebase Auth
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const register = () => {
-    console.log('name', name, 'email', email, 'password', password);
-  }
+  const register = async () => {
+    try {
+      if (email !== '' && password !== '') {
+        const userAuth = await createUserWithEmailAndPassword(auth, email, password);
+        console.log('userAuth', userAuth);
+        const uid = userAuth.user.uid;
 
+        // Now that you have the userAuth, you can interact with Firestore or other Firebase services if needed.
+        // Ensure that Firestore is properly imported and initialized.
+
+        // Example Firestore code:
+        const firestore = getFirestore(app);
+        await setDoc(doc(firestore, 'user', uid), { name, email });
+      }
+    } catch (error) {
+      console.log('error', error);
+    }
+  };
+
+  // Use useEffect to ensure Firebase is ready before registering
+  useEffect(() => {
+    register();
+  }, []);
 
   // Returning
   return (
@@ -55,7 +82,7 @@ const Register = ({ navigation }) => {
             label="Name"
             placeholder="Enter your name"
             value={name}
-            onChangeText={text => setName(text)}
+            onChangeText={(text) => setName(text)}
           />
         </Animatable.View>
 
@@ -68,7 +95,7 @@ const Register = ({ navigation }) => {
             label="Email"
             placeholder="Enter your email address"
             value={email}
-            onChangeText={text => setEmail(text)}
+            onChangeText={(text) => setEmail(text)}
           />
         </Animatable.View>
 
@@ -81,7 +108,7 @@ const Register = ({ navigation }) => {
             label="Password"
             placeholder="Enter your password"
             value={password}
-            onChangeText={text => setPassword(text)}
+            onChangeText={(text) => setPassword(text)}
             secureTextEntry={true}
           />
         </Animatable.View>
@@ -91,10 +118,7 @@ const Register = ({ navigation }) => {
 
         {/* Button component */}
         <Animatable.View animation="fadeInUp" delay={1300}>
-          <Button
-            label="Inscription"
-            onPress={register}
-          />
+          <Button label="Inscription" onPress={register} />
         </Animatable.View>
 
         {/* Vertical spacer */}
