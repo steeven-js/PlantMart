@@ -48,12 +48,12 @@ const Login = ({ navigation }) => {
     navigation.navigate('Home')
   }
 
-  console.log('email', email, 'password', password);
+  // console.log('email', email, 'password', password);
 
   const connexion = async () => {
     try {
       await auth().signInWithEmailAndPassword(email, password)
-      console.log('email', email, 'password', password);
+      // console.log('email', email, 'password', password);
       setEmail('');
       setPassword('');
       // Redirection

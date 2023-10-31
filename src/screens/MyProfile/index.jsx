@@ -22,12 +22,12 @@ const MyProfile = ({ navigation }) => {
 
   const [user, setUser] = useState();
 
-  console.log('userId', userId);
+  // console.log('userId', userId);
 
   // Requete firebase
   const getUserData = async () => {
     const snapUser = await firestore().collection('users').doc(userId).get();
-    console.log('snapUser', snapUser.data());
+    // console.log('snapUser', snapUser.data());
     setUser(snapUser.data());
   };
 
