@@ -201,11 +201,11 @@ const Home = ({ navigation }) => {
           {/*Most popular Section title & link wrapper */}
           <View style={styles.sectionTitleAndLinkWrapper}>
             {/* Section title component */}
-            <SectionTitle title="Most popular" />
+            <SectionTitle title="Les plus populaires" />
 
             {/* Link component */}
             <Link
-              label="See all"
+              label="Tout voir"
               onPress={() => navigation.navigate('Grid View Popular')}
             />
           </View>
@@ -245,11 +245,11 @@ const Home = ({ navigation }) => {
           {/*Best seller Section title & link wrapper */}
           <View style={styles.sectionTitleAndLinkWrapper}>
             {/* Section title component */}
-            <SectionTitle title="Best seller" />
+            <SectionTitle title="Meilleures ventes" />
 
             {/* Link component */}
             <Link
-              label="See all"
+              label="Tout voir"
               onPress={() => navigation.navigate('Grid View Best Seller')}
             />
           </View>
@@ -289,10 +289,10 @@ const Home = ({ navigation }) => {
           {/*New arrivals Section title & link wrapper */}
           <View style={styles.sectionTitleAndLinkWrapper}>
             {/* Section title component */}
-            <SectionTitle title="New arrivals" />
+            <SectionTitle title="Nouveautés" />
 
             {/* Link component */}
-            <Link label="See all"
+            <Link label="Tout voir"
               onPress={() => navigation.navigate('List View New Arrivals')}
             />
           </View>

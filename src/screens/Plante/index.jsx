@@ -12,9 +12,6 @@ import { ThemeContext } from '../../theming/contexts/ThemeContext';
 import { SCREEN_WIDTH, STANDARD_VECTOR_ICON_SIZE } from '../../config/Constants';
 import GridViewProductsData from '../../data/GridViewProductsData';
 import HeartDarkGreenSvg from '../../assets/icons/svg/ic_heart_dark_green.svg';
-import StarSvg from '../../assets/icons/svg/ic_star.svg';
-import SvgPlus from '../../assets/icons/svg/ic_plus_dark_green.svg';
-import SvgMinus from '../../assets/icons/svg/ic_minus_dark_green.svg';
 import { getOnePlant } from '../../common/api';
 import styles from './styles';
 
@@ -193,16 +190,16 @@ const Plante = ({ navigation, route }) => {
               showsHorizontalScrollIndicator={false}>
               {plante && plante.usages ? (
                 plante.usages.map((usage, index) => (
-                  <View
+                  <TouchableOpacity
                     key={index}
                     style={[
                       styles.symptomeLabelWrapper,
                       { backgroundColor: theme.accent },
                     ]}
-                  >
+                    onPress={() => alert(`${usage.notes}`)}>
                     <Text style={{ padding: 10, color: 'white'}}>{usage.symptome_name}</Text>
                     {/* <Text>Notes : {usage.notes}</Text> */}
-                  </View>
+                  </TouchableOpacity>
                 ))
               ) : (
                 <Text>Aucun usage recommandé disponible pour cette plante.</Text>
