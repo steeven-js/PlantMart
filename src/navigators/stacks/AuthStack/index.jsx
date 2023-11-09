@@ -51,7 +51,7 @@ const AuthStack = () => {
     <Stack.Navigator screenOptions={screenOptions}>
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="OTP Verification" component={OtpVerification} />
-      <Stack.Screen name="Inscription" component={Register} />
+      <Stack.Screen name="Register" component={Register} />
       <Stack.Screen name="Email Verification" component={EmailVerification} />
     </Stack.Navigator>
   );

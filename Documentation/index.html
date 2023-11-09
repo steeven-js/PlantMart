@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Documentation | PlantMart React Native App Template</title>
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      name="viewport"
+    />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="assets/css/prism.css" />
+    <link rel="stylesheet" href="assets/css/layout.css" />
+    <link rel="stylesheet" href="assets/css/skin-blue.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- All dynamic styles -->
+    <style type="text/css"></style>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.min.js"></script>
+      <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+    <style>
+      .xdocs-pre-loader {
+        background: url(http: //xvelopers.com/wp/themes/docs/wp-content/plugins/xdocs/assets/img/loader1.gif)
+          center no-repeat #fff;
+      }
+    </style>
+  </head>
+  <body class="skin-blue fixed" data-spy="scroll" data-target="#scrollspy">
+    <div class="xdocs-pre-loader"></div>
+    <div class="wrapper">
+      <header class="main-header">
+        <!-- Sidebar toggle button-->
+        <a
+          href="#"
+          class="sidebar-toggle"
+          data-toggle="offcanvas"
+          role="button"
+        >
+          <span class="sr-only">Toggle navigation</span>
+        </a>
+      </header>
+      <!-- Left side column. contains the logo and sidebar -->
+      <aside class="main-sidebar">
+        <div class="logo">
+          <img src="./assets/img/logo.png" alt="Logo" />
+        </div>
+        <!-- sidebar: style can be found in sidebar.less -->
+        <div class="sidebar" id="scrollspy">
+          <!-- sidebar menu: : style can be found in sidebar.less -->
+          <ul class="nav sidebar-menu">
+            <li class="active"><a href="#introduction">Introduction</a></li>
+            <li class="">
+              <a href="#main-directory-structure">Main Directory Structure</a>
+            </li>
+            <li class="">
+              <a href="#app-directory-structure">App Directory Structure</a>
+            </li>
+            <li class="treeview" id="scrollspy-components">
+              <a href="#">Installation</a>
+              <ul class="nav treeview-menu">
+                <li class=""><a href="#get-started">Get started</a></li>
+                <li class=""><a href="#app-installtion">App Installtion</a></li>
+                <li class="">
+                  <a href="#installing-node-modules">Installing Node Modules</a>
+                </li>
+                <li class="">
+                  <a href="#installing-pod-files">Installing Pod Files</a>
+                </li>
+                <li class=""><a href="#running-ios-app">Running iOS App</a></li>
+                <li class="">
+                  <a href="#running-android-app">Running Android App</a>
+                </li>
+              </ul>
+            </li>
+            <li class="">
+              <a href="#custom-fonts">Custom Fonts</a>
+            </li>
+            <li class="">
+              <a href="#images">Images</a>
+            </li>
+            <li class="">
+              <a href="#lottie-animation-files">Lottie Animation Files</a>
+            </li>
+            <li class="">
+              <a href="#reusable-components">Reusable Components</a>
+            </li>
+            <li class="">
+              <a href="#navigators">Navigators</a>
+            </li>
+            <li class="">
+              <a href="#app-screens">App Screens</a>
+            </li>
+            <li class="">
+              <a href="#changing-app-logo">Changing App Logo</a>
+            </li>
+            <li class="">
+              <a href="#changing-ui-colors">Changing UI Colors</a>
+            </li>
+            <li class="">
+              <a href="#configuring-ui-colors">Configuring Theme Colors</a>
+            </li>
+            <li class="">
+              <a href="#changing-typography">Customizing Typography</a>
+            </li>
+            <li class=""><a href="#npm-packages">NPM Packages</a></li>
+            <li class=""><a href="#special-credits">Special Credits</a></li>
+          </ul>
+        </div>
+      </aside>
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Main content -->
+        <div class="content body">
+          <section id="introduction">
+            <div class="section-content">
+              <div class="content-header">
+                <h1>PlantMart - eCommerce App Template(iOS & Android)</h1>
+                <div class="version">Version 1.0</div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12"></div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12">
+                  <p>
+                    Many Congratulations & Thank You so much for purchasing the
+                    <b>PlantMart</b> eCommerce App Template
+                    <b>version 1.0</b> built on latest
+                    <b>React Native CLI version 0.71.10</b> for your next
+                    <b>eCommerce</b> project.
+                    <b class="text-danger"
+                      >This template is specially designed for selling Indoor &
+                      Outdoor plants online, but you can use it with any type of
+                      eCommerce project, Whether it's Electronics, Footwear,
+                      Clothing, Grocery, or others.</b
+                    >
+                    We covered almost everything in this document that how
+                    easily you can set up, install and run the App template very
+                    easily & quickly. If you have any questions that are beyond
+                    the scope of this help file, please feel free to contact us
+                    at <b>support@mywebjunction.com</b>.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id="main-directory-structure" class="stickem-container">
+            <div class="section-content">
+              <h2 class="page-header">
+                <a href="#main-directory-structure" class="header-link"
+                  ><i class="fa fa-link"></i></a
+                >Main Directory Structure
+              </h2>
+              <br />
+              <p>
+                After downloading and extracting the <b>Main.zip</b> file, The
+                extracted directory exactly looks like the screenshot given
+                below. Well, the Main directory contains basically two
+                subdirectories named <b>App</b> and <b>Documentation</b> and one
+                <b>Important.txt</b> file. Inside the App directory you can see
+                a zipped file called <b>PlantMart.zip</b> which contains all the
+                source files for the App template.
+              </p>
+              <hr />
+              <img src="./assets/img/main-directory-structure.png" alt="" />
+            </div>
+          </section>
+          <section id="app-directory-structure" class="stickem-container">
+            <div class="section-content">
+              <h2 class="page-header">
+                <a href="#app-directory-structure" class="header-link"
+                  ><i class="fa fa-link"></i></a
+                >App Directory Structure
+              </h2>
+              <br />
+              <p>
+                After extracting the zipped file <b>"PlantMart.zip"</b>, You
+                will get the App directory called
+                <b class="text-info">PlantMart</b>. Inside it, you will find a
+                basic directory structure like the screenshot given below.
+              </p>
+              <hr />
+              <img src="./assets/img/app-directory-structure.png" alt="" />
+            </div>
+          </section>
+          <section id="installation" class="stickem-container">
+            <div class="section-content">
+              <h2 class="page-header">
+                <a href="#installation" class="header-link"
+                  ><i class="fa fa-link"></i></a
+                >Installation
+              </h2>
+              <div id="get-started" class="step-content clearfix">
+                <h3 class="steps-header">
+                  <a href="#get-started">Get started</a>
+                </h3>
+                <p>
+                  You need a few more things to get started if you are very new
+                  to <b>React Native CLI</b> development environment.<br /><br />
+                  Before going to <b class="text-warning">Install</b> &
+                  <b class="text-success">Run</b> the App please read the
+                  <b>Official Documentation</b> carefully or if you are a Pro in
+                  <b>React Native CLI</b> and have a proper development
+                  environment set up then you may ignore the
+                  <b>Get Started</b> section.
+                </p>
+                <ul class="arrow-list">
+                  <li>
+                    To set up <b>React Native CLI</b> development environment.
+                  </li>
+                </ul>
+                <a
+                  target="_blank"
+                  class="btn btn-sm btn-info"
+                  href="https://reactnative.dev/docs/environment-setup"
+                  >Read Official Documentation</a
+                >
+                <p>&nbsp;</p>
+                <ul class="arrow-list">
+                  <li>
+                    You can use any Text Editor of your choice to edit
+                    <b>JXS</b> & <b>StyleSheet</b> files or you may install very
+                    popular <b>VS Code</b>.
+                  </li>
+                </ul>
+                <a
+                  target="_blank"
+                  class="btn btn-sm btn-success"
+                  href="https://code.visualstudio.com/"
+                  >Download VS Code</a
+                >
+              </div>
+              <div id="app-installtion" class="step-content clearfix">
+                <h3 class="steps-header">
+                  <a href="#app-installtion">App Installtion</a>
+                </h3>
+                <p>
+                  Great! Now it’s time to open the extracted
+                  <b class="text-info">PlantMart</b> app folder in your favorite
+                  text editor. We recommend that use a Text Editor which has an
+                  inbuilt <b>Terminal</b> Like <b>VS Code</b>.
+                </p>
+                <div class="alert alert-danger">
+                  <b>IMPORTANT:</b> Want to <b>Rename</b> your app as per your
+                  choice then wait for a little bit. Because renaming App in
+                  React Native is a <b>Tedious</b> job. If you are very new and
+                  don’t have much experience in React Native App development
+                  then You might be in <b>Trouble</b>. Though there is a good
+                  option available for those who want to Rename the App in just
+                  one command. Yes, you may use this package called
+                  <a
+                    target="_blank"
+                    href="https://www.npmjs.com/package/react-native-rename"
+                    ><b>react-native-rename</b></a
+                  >. But we highly recommend you that first <b>Run</b> &
+                  <b>Test</b> your App without any breaking changes. After
+                  testing the downloaded App if you find everything ok then go
+                  for the updates you want to do at your end.
+                </div>
+              </div>
+              <div id="installing-node-modules" class="step-content clearfix">
+                <h3 class="steps-header">
+                  <a href="#installing-node-modules">Installing Node Modules</a
+                  >(Not included due to large upload size)
+                </h3>
+                <p>
+                  Well, before running and testing your App for both iOS and
+                  Android you need to install <b>Node Modules</b> and
+                  <b>Pod Files</b>. We will discuss about installing Pod files
+                  in the very next section mentioned below. First, let's install
+                  Node Modules. To install Node Modules type the following
+                  command shown below in your terminal from the root directory
+                  of the project.
+                </p>
+                <pre>npm install or npm install --force</pre>
+                <p>
+                  <b
+                    >Or for more simplicity watch this video posted on
+                    youtube</b
+                  >
+                  <a
+                    target="_blank"
+                    href="https://www.youtube.com/watch?v=2FDx7bLzkNU"
+                    >https://www.youtube.com/watch?v=2FDx7bLzkNU</a
+                  >
+                </p>
+                <div class="alert alert-warning">
+                  <b>IMPORTANT:</b> Installation of <b>Node Modules</b> may take
+                  a few minutes. It depneds on your Internet speed.
+                  <b>npm install</b> command will install all the required
+                  <b>NPM Packages</b> mentioned in the <b>package.json</b> file
+                  located in the root directory of the project.
+                </div>
+              </div>
+              <div id="installing-pod-files" class="step-content clearfix">
+                <h3 class="steps-header">
+                  <a href="#installing-pod-files">Installing Pod Files</a>(Not
+                  included due to large upload size)
+                </h3>
+                <p>
+                  To install <b>Pod Files</b> you have to navigate to the ios
+                  folder first then install the Pod Files here. Type the
+                  following command shown below in your terminal from the root
+                  directory of the project.
+                </p>
+                <pre>cd ios && pod install && cd ..</pre>
+                <p>
+                  <b
+                    >Or for more simplicity watch this video posted on
+                    youtube</b
+                  >
+                  <a
+                    target="_blank"
+                    href="https://www.youtube.com/watch?v=MfPSzgb0a_o"
+                    >https://www.youtube.com/watch?v=MfPSzgb0a_o</a
+                  >
+                </p>
+                <div class="alert alert-warning">
+                  <b>IMPORTANT:</b> Installation of <b>Pod Files</b> may take a
+                  few minutes. This command will install all the required Pod
+                  Files.
+                </div>
+              </div>
+              <div id="running-ios-app" class="step-content clearfix">
+                <h3 class="steps-header">
+                  <a href="#running-ios-app">Running iOS App</a>
+                </h3>
+                <p>
+                  To run the <b>iOS</b> version of the App make sure that you
+                  have already started the <b>Metro server</b> from your
+                  terminal and then type the following command in a separate tab
+                  of your terminal.
+                </p>
+                <pre>npx react-native run-ios</pre>
+              </div>
+              <div id="running-android-app" class="step-content clearfix">
+                <h3 class="steps-header">
+                  <a href="#running-android-app">Running Android App</a>
+                </h3>
+                <p>
+                  To run the <b>Android</b> version of the App make sure that
+                  you have already started the <b>Metro server</b> from your
+                  terminal and then type the following command in a separate tab
+                  of your terminal.
+                </p>
+                <pre>npx react-native run-android</pre>
+                <br />
+                <div class="alert alert-info">
+                  <p>
+                    <b>IMPORTANT NOTE:</b> Above mentioned commands are for
+                    <b>npm</b> users only. If you use the <b>yarn</b> package
+                    manager then the run command might be a little bit different
+                    as compared to the npm run command.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id="custom-fonts" class="stickem-container">
+            <div class="section-content">
+              <h2 class="page-header">
+                <a href="#custom-fonts" class="header-link"
+                  ><i class="fa fa-link"></i></a
+                >Custom Fonts
+              </h2>
+              <br />
+              <p>
+                All the <b>Custom Fonts</b> have been placed in a directory
+                called <b>fonts</b> inside the <b>src/assets</b> directory
+                located in the <b>root</b> directory of the App. See the
+                screenshot image given below.
+              </p>
+              <hr />
+              <img src="./assets/img/fonts-location.png" alt="" />
+            </div>
+          </section>
+          <section id="images" class="stickem-container">
+            <div class="section-content">
+              <h2 class="page-header">
+                <a href="#images" class="header-link"
+                  ><i class="fa fa-link"></i></a
+                >Images
+              </h2>
+              <br />
+              <p>
+                All the <b>Images</b> have been placed in a directory called
+                <b>images</b> inside the <b>src/assets</b> directory located in
+                the <b>root</b> directory of the App. See the screenshot image
+                given below.
+              </p>
+              <div class="alert alert-warning">
+                <b>IMPORTANT NOTE:</b> Product, Category, Carousel Slider &
+                Brand images shown in the demo screenshots & video are only for
+                demonstration purposes and not part of the final purchase.
+                Except for these, you will get all the placeholder images with
+                recommended size caption. Actually, we are not allowed to use
+                those images commercially at all.
+              </div>
+              <hr />
+              <img src="./assets/img/images-location.png" alt="" />
+            </div>
+          </section>
+          <section id="lottie-animation-files" class="stickem-container">
+            <div class="section-content">
+              <h2 class="page-header">
+                <a href="#lottie-animation-files" class="header-link"
+                  ><i class="fa fa-link"></i></a
+                >Lottie Animation Files
+              </h2>
+              <br />
+              <p>
+                All the <b>Lottie Animation Files</b> have been placed in a
+                directory called <b>lottie</b> inside the
+                <b>src/assets</b> directory located in the <b>root</b> directory
+                of the App. See the screenshot image given below.
+              </p>
+              <hr />
+              <img src="./assets/img/lottie-location.png" alt="" />
+            </div>
+          </section>
+          <section id="reusable-components" class="stickem-container">
+            <div class="section-content">
+              <h2 class="page-header">
+                <a href="#reusable-components" class="header-link"
+                  ><i class="fa fa-link"></i></a
+                >Reusable Components
+              </h2>
+              <br />
+              <p>
+                All the <b>Reusable Components</b> have been placed in a
+                directory called <b>components</b> inside the the
+                <b>src</b> directory located in the root directory of the App.
+                See the screenshot image given below.
+              </p>
+              <hr />
+              <img src="./assets/img/components-location.png" alt="" />
+            </div>
+          </section>
+          <section id="navigators" class="stickem-container">
+            <div class="section-content">
+              <h2 class="page-header">
+                <a href="#navigators" class="header-link"
+                  ><i class="fa fa-link"></i></a
+                >Navigators
+              </h2>
+              <br />
+              <p>
+                All the <b>Navigators</b> have been placed separately in
+                subdirectories in a directory called <b>navigators</b> inside
+                <b>src</b> directory located in the <b>root</b> directory of the
+                App. See the screenshot image given below.
+              </p>
+              <hr />
+              <img src="./assets/img/navigators-location.png" alt="" />
+            </div>
+          </section>
+          <section id="app-screens" class="stickem-container">
+            <div class="section-content">
+              <h2 class="page-header">
+                <a href="#app-screens" class="header-link"
+                  ><i class="fa fa-link"></i></a
+                >App Screens
+              </h2>
+              <br />
+              <p>
+                All the <b>App Screens</b> have been placed in a directory
+                called <b>screens</b> inside <b>src</b> directory located in the
+                <b>root</b> directory of the App. See the screenshot image given
+                below.
+              </p>
+              <hr />
+              <img src="./assets/img/screens-location.png" alt="" />
+            </div>
+          </section>
+          <section id="changing-app-logo" class="stickem-container">
+            <div class="section-content">
+              <h2 class="page-header">
+                <a href="#changing-app-logo" class="header-link"
+                  ><i class="fa fa-link"></i></a
+                >Changing App Logo
+              </h2>
+              <br />
+              <p>
+                The <b>App Logo</b> has been used in several screens and
+                components, So to change the App logo you need to change the
+                following screens and components mentioned below.
+              </p>
+              <div>
+                <h2 class="page-header">1. Drawer Navigation Header Logo</h2>
+                <p>
+                  To change the <b>Drawer navigation header logo</b>, You need
+                  to open the <b>index.js</b> file located in the
+                  <b>src/navigators/drawers/HomeDrawer</b> directory at the root
+                  of the App directory. Now you can change the default App logo
+                  with yours on <b>Line 58 & 59</b> shown in the screenshot
+                  image given below.
+                </p>
+                <img src="./assets/img/drawer-logo-location.png" alt="" />
+              </div>
+              <div>
+                <h2 class="page-header">2. Splash Screen Logo</h2>
+                <p>
+                  To change the <b>Splash screen logo</b>, You need to open the
+                  <b>index.js</b> file located in the
+                  <b>src/screens/Splash</b> directory at the root of the App
+                  directory. Now you can change the default App logo with yours
+                  on <b>Line 15</b> shown in the screenshot image given below.
+                </p>
+                <img src="./assets/img/splash-logo-location.png" alt="" />
+              </div>
+            </div>
+          </section>
+          <section id="changing-ui-colors" class="stickem-container">
+            <div class="section-content">
+              <h2 class="page-header">
+                <a href="#changing-ui-colors" class="header-link"
+                  ><i class="fa fa-link"></i></a
+                >Changing UI Colors
+              </h2>
+              <br />
+              <p>
+                To change the <b>App UI Colors</b> you have to navigate to the
+                <b class="text-danger">Colors.js</b> file placed in a directory
+                called <b>src/config</b> located in the <b>root</b> directory of
+                the App. See the screenshot image given below.
+              </p>
+              <hr />
+              <div style="display: flex; flex-direction: row">
+                <img src="./assets/img/colors-config.png" alt="" />
+              </div>
+            </div>
+          </section>
+          <section id="configuring-ui-colors" class="stickem-container">
+            <div class="section-content">
+              <h2 class="page-header">
+                <a href="#configuring-ui-colors" class="header-link"
+                  ><i class="fa fa-link"></i></a
+                >Configuring Theme Colors
+              </h2>
+              <br />
+              <p>
+                To configure the <b>App Theme Colors</b> you have to navigate to
+                the <b class="text-danger">ThemeContextProvider.js</b> file
+                placed in a directory called <b>src/theming</b> located in the
+                <b>root</b> directory of the App. See the screenshot image given
+                below.
+              </p>
+              <hr />
+              <div style="display: flex; flex-direction: row">
+                <img src="./assets/img/theme-config.png" alt="" />
+              </div>
+            </div>
+          </section>
+          <section id="changing-typography" class="stickem-container">
+            <div class="section-content">
+              <h2 class="page-header">
+                <a href="#changing-typography" class="header-link"
+                  ><i class="fa fa-link"></i></a
+                >Customizing Typography
+              </h2>
+              <br />
+              <p>
+                To customize the <b>Typography</b> you have to navigate to the
+                <b class="text-danger">Constants.js</b> file placed in a
+                directory called <b>src/config</b> located in the
+                <b>root</b> directory of the App. See the screenshot image given
+                below.
+              </p>
+              <hr />
+              <div style="display: flex; flex-direction: row">
+                <img src="./assets/img/fonts-config.png" alt="" />
+              </div>
+            </div>
+          </section>
+          <section id="npm-packages" class="stickem-container">
+            <div class="section-content">
+              <h2 class="page-header">
+                <a href="#npm-packages" class="header-link"
+                  ><i class="fa fa-link"></i></a
+                >NPM Packages
+              </h2>
+              <br />
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <a
+                    target="_blank"
+                    href="https://www.npmjs.com/package/react-native-animatable"
+                    >React Native Animatable</a
+                  >
+                </li>
+                <li class="list-group-item">
+                  <a
+                    target="_blank"
+                    href="https://www.npmjs.com/package/lottie-react-native"
+                    >Lottie for React Native</a
+                  >
+                </li>
+                <li class="list-group-item">
+                  <a
+                    target="_blank"
+                    href="https://www.npmjs.com/package/react-native-gesture-handler"
+                    >React Native Gesture Handler</a
+                  >
+                </li>
+                <li class="list-group-item">
+                  <a
+                    target="_blank"
+                    href="https://www.npmjs.com/package/react-native-modal"
+                    >React Native Modal</a
+                  >
+                </li>
+                <li class="list-group-item">
+                  <a
+                    target="_blank"
+                    href="https://www.npmjs.com/package/react-native-reanimated"
+                    >React Native Reanimated2</a
+                  >
+                </li>
+                <li class="list-group-item">
+                  <a
+                    target="_blank"
+                    href="https://www.npmjs.com/package/react-native-safe-area-context"
+                    >React Native Safe Area Context</a
+                  >
+                </li>
+                <li class="list-group-item">
+                  <a
+                    target="_blank"
+                    href="https://www.npmjs.com/package/react-native-screens"
+                    >React Native Screens</a
+                  >
+                </li>
+                <li class="list-group-item">
+                  <a
+                    target="_blank"
+                    href="https://www.npmjs.com/package/react-native-size-matters"
+                    >React Native Size Matters</a
+                  >
+                </li>
+                <li class="list-group-item">
+                  <a
+                    target="_blank"
+                    href="https://www.npmjs.com/package/react-native-status-bar-height"
+                    >React Native Status Bar Height</a
+                  >
+                </li>
+                <li class="list-group-item">
+                  <a
+                    target="_blank"
+                    href="https://www.npmjs.com/package/react-native-super-grid"
+                    >React Native Super Grid</a
+                  >
+                </li>
+                <li class="list-group-item">
+                  <a
+                    target="_blank"
+                    href="https://www.npmjs.com/package/react-native-svg"
+                    >React Native SVG</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section id="special-credits" class="stickem-container">
+            <div class="section-content">
+              <h2 class="page-header">
+                <a href="#special-credits" class="header-link"
+                  ><i class="fa fa-link"></i></a
+                >Special Credits
+              </h2>
+              <br />
+              <div id="credits" class="p-b-40">
+                <div class="row">
+                  <div class="col-md-12">
+                    <ul class="list-group">
+                      <li class="list-group-item">
+                        <a target="_blank" href="https://www.envato.com/"
+                          >Envato</a
+                        >
+                      </li>
+                      <li class="list-group-item">
+                        <a target="_blank" href="https://reactnative.dev/"
+                          >React Native</a
+                        >
+                      </li>
+                      <li class="list-group-item">
+                        <a target="_blank" href="https://www.npmjs.com/">NPM</a>
+                      </li>
+                      <li class="list-group-item">
+                        <a target="_blank" href="https://reactnavigation.org/"
+                          >React Navigation v6</a
+                        >
+                      </li>
+                      <li class="list-group-item">
+                        <a
+                          target="_blank"
+                          href="https://www.npmjs.com/package/react-native-star-rating-widget"
+                          >React Native Star Rating Widget</a
+                        >
+                      </li>
+                      <li class="list-group-item">
+                        <a
+                          target="_blank"
+                          href="https://www.npmjs.com/package/react-native-otp-textinput"
+                          >React Native OTP Text Input</a
+                        >
+                      </li>
+                      <li class="list-group-item">
+                        <a target="_blank" href="https://lottiefiles.com/"
+                          >Lottie Files</a
+                        >
+                      </li>
+                      <li class="list-group-item">
+                        <a target="_blank" href="https://fonts.google.com/"
+                          >Google Fonts</a
+                        >
+                      </li>
+                    </ul>
+                    <h2 align="center">
+                      Thank you so much! <br />
+                      Best wishes & Happy coding...
+                    </h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <!-- /.content -->
+      </div>
+      <!-- /.content-wrapper -->
+      <!-- <footer class="main-footer">
+        <div class="copyrights">Copyrights MYWEBJUNCTION 2021</div>
+      </footer> -->
+    </div>
+    <!-- ./wrapper -->
+    <script src="assets/js/jQuery-2.2.0.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/jquery.stickem.js"></script>
+    <script src="assets/js/jquery.slimscroll.min.js"></script>
+    <script src="assets/js/prism.js"></script>
+    <script src="assets/js/docs.js"></script>
+  </body>
+</html>
