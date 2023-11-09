@@ -65,7 +65,6 @@ const HomeStack = () => {
         options={{headerShown: false}}
       />
       <Stack.Screen name="Categories" component={Categories} />
-      <Stack.Screen name="List View Category" component={ListViewCategory} />
       <Stack.Screen name="Plante" component={Plante} />
       <Stack.Screen name="Product Reviews" component={ProductReviews} />
       <Stack.Screen name="Most Popular" component={MostPopular} />
@@ -74,6 +73,7 @@ const HomeStack = () => {
       <Stack.Screen name="List View New Arrivals" component={ListViewNew} />
 
       {/* Default */}
+      <Stack.Screen name="List View Category" component={ListViewCategory} />
       <Stack.Screen name="List View Products" component={ListViewProducts} />
       <Stack.Screen name="Grid View Products" component={GridViewProducts} />
       <Stack.Screen name="Product" component={Product} />

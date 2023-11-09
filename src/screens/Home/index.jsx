@@ -122,11 +122,11 @@ const Home = ({ navigation }) => {
           {/* Section title & link wrapper */}
           <View style={styles.sectionTitleAndLinkWrapper}>
             {/* Section title component */}
-            <SectionTitle title="Categories" />
+            <SectionTitle title="Spécialités pharmaceutiques" />
 
             {/* Link component */}
             <Link
-              label="See all"
+              label="Tout voir"
               onPress={() => navigation.navigate('Categories')}
             />
           </View>
