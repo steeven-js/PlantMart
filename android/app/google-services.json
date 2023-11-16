@@ -12,7 +12,20 @@
           "package_name": "com.plantmart"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "952998531433-ustphh0kvs360v7of06harr57e7astrk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.plantmart",
+            "certificate_hash": "908064518b1e1406f7a43197ec68f43dede15182"
+          }
+        },
+        {
+          "client_id": "952998531433-8fg72jtgatve7746f12papsgj75m31ab.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCTOO3ILPesasjZNiHmytKA_KUrDXnx-aU"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "952998531433-8fg72jtgatve7746f12papsgj75m31ab.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

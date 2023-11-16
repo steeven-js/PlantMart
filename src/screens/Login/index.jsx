@@ -1,5 +1,5 @@
-import { useContext, useState } from 'react';
-import { View, TouchableOpacity } from 'react-native';
+import { useContext, useState, useEffect } from 'react';
+import { View, TouchableOpacity, Text } from 'react-native';
 import Modal from 'react-native-modal';
 import * as Animatable from 'react-native-animatable';
 import Button from '../../components/buttons/Button';
@@ -21,7 +21,20 @@ import PasswordTextInput from '../../components/inputs/PasswordTextInput';
 import ScreenTitle from '../../components/headings/ScreenTitle';
 import auth from '@react-native-firebase/auth';
 import styles from './styles';
-import { useNavigation } from '@react-navigation/native';
+import { GoogleSignin, statusCodes } from '@react-native-google-signin/google-signin';
+
+GoogleSignin.configure({
+  scopes: ['https://www.googleapis.com/auth/drive.readonly'], // what API you want to access on behalf of the user, default is email and profile
+  webClientId: '952998531433-8fg72jtgatve7746f12papsgj75m31ab.apps.googleusercontent.com', // client ID of type WEB for your server (needed to verify user ID and offline access)
+  offlineAccess: true, // if you want to access Google API on behalf of the user FROM YOUR SERVER
+  hostedDomain: '', // specifies a hosted domain restriction
+  forceCodeForRefreshToken: true, // [Android] related to `serverAuthCode`, read the docs link below *.
+  accountName: '', // [Android] specifies an account name on the device that should be used
+  iosClientId: '<FROM DEVELOPER CONSOLE>', // [iOS] if you want to specify the client ID of type iOS (otherwise, it is taken from GoogleService-Info.plist)
+  googleServicePlistPath: '', // [iOS] if you renamed your GoogleService-Info file, new name here, e.g. GoogleService-Info-Staging
+  openIdRealm: '', // [iOS] The OpenID2 realm of the home web server. This allows Google to include the user's OpenID Identifier in the OpenID Connect ID token.
+  profileImageSize: 120, // [iOS] The desired height (and width) of the profile image. Defaults to 120px
+});
 
 // Functional component
 const Login = ({ navigation }) => {
@@ -62,6 +75,64 @@ const Login = ({ navigation }) => {
       console.log('error', error)
     }
   };
+
+  const isSignedIn = async () => {
+    const isSignedInState = await GoogleSignin.isSignedIn();
+    console.log('isSignedIn :', isSignedInState);
+    // setState({ isLoginScreenPresented: !isSignedIn });
+  };
+
+  const onGoogleButtonPress = async () => {
+    try {
+      console.log('Vérification des services Google Play...');
+      await GoogleSignin.hasPlayServices();
+      console.log('Services Google Play disponibles.');
+
+      console.log('Lancement de la connexion Google...');
+      const userInfo = await GoogleSignin.signIn();
+      // console.log('Connexion Google réussie. UserInfo :', userInfo, "GoogleSignin : ", GoogleSignin.getTokens());
+
+      const token = await GoogleSignin.getTokens();
+
+      console.log('token :', token.idToken)
+      // Obtenir le jeton d'identification de l'utilisateur
+      const { idToken } = userInfo;
+
+      // Créer une authentification Google avec le jeton
+      const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+
+      console.log('googleCredential :', googleCredential);
+
+      console.log('Connexion à Firebase avec l\'authentification Google...');
+      // Connecter l'utilisateur avec l'authentification
+      await auth().signInWithCredential(googleCredential);
+
+      console.log('Connexion réussie !');
+    } catch (error) {
+      console.error('Erreur lors de la connexion avec Google :', error);
+      if (error.code === statusCodes.SIGN_IN_CANCELLED) {
+        console.log('L\'utilisateur a annulé le flux de connexion.');
+      } else if (error.code === statusCodes.IN_PROGRESS) {
+        console.log('L\'opération (par exemple, la connexion) est déjà en cours.');
+      } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
+        console.log('Les services Google Play ne sont pas disponibles ou obsolètes.');
+      } else {
+        console.error('Une autre erreur s\'est produite.', error);
+      }
+    }
+  };
+
+  signOut = async () => {
+    try {
+      await GoogleSignin.signOut();
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    isSignedIn();
+  }, [])
 
   // Returning
   return (
@@ -157,9 +228,12 @@ const Login = ({ navigation }) => {
               <GoogleSvg
                 width={STANDARD_SOCIAL_ICON_SIZE}
                 height={STANDARD_SOCIAL_ICON_SIZE}
+                onPress={onGoogleButtonPress}
               />
             </TouchableOpacity>
           </Animatable.View>
+
+          <Text onPress={signOut}>Signout</Text>
         </View>
 
         {/* Vertical spacer */}
