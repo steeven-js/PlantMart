@@ -114,7 +114,7 @@ const Home = ({ navigation }) => {
           </View>
 
           {/* Search text input component */}
-          <SearchTextInput />
+          {/* <SearchTextInput /> */}
 
           {/* Vertical spacer */}
           <View style={styles.verticalSpacer} />

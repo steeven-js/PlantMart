@@ -11,6 +11,7 @@ import styles from './styles';
 import ScreenTitle from '../../components/headings/ScreenTitle';
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
+import { postData } from '../../common/api';
 
 // Functional component
 const Register = ({navigation}) => {
@@ -24,6 +25,10 @@ const Register = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const goToHome = () => {
+    navigation.navigate('Home')
+  }
+
   const Inscription = async () => {
     try {
       if (email != '' && password != '') {
@@ -31,7 +36,7 @@ const Register = ({navigation}) => {
           email,
           password,
         );
-        console.log('userAuth', userAuth);
+        // console.log('userAuth', userAuth);
         const uid = userAuth.user.uid;
 
         // Enregistrement de l'utilisateur en base de donnée à l'aide de son UID.
@@ -39,8 +44,22 @@ const Register = ({navigation}) => {
           uid: uid,
           email: email
         });
+
+        await postData('https://plantmed.jsprod.fr/api/user', {
+          name: email ,
+          email: email,
+          uid: uid,
+          password: password
+        }).then(response => console.log('response', response))
       }
-      console.log('email', email , 'password', password);
+
+      console.log('postData', postData)
+
+      goToHome();
+
+      console.log('postData', postData)
+
+      // console.log('email', email , 'password', password);
     } catch (error) {
       console.log('error', error);
     }

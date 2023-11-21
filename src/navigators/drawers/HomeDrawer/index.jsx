@@ -36,6 +36,7 @@ import styles from './styles';
 import { IndependentColors } from '../../../config/Colors';
 import { useSelector } from 'react-redux';
 import { useNavigation } from '@react-navigation/native';
+import MyProfileStack from '../../stacks/MyProfileStack';
 
 // Creating drawer navigator
 const Drawer = createDrawerNavigator();
@@ -125,6 +126,8 @@ const HomeDrawer = () => {
 
   // Storing theme config according to the theme mode
   const theme = isLightTheme ? lightTheme : darkTheme;
+
+  const userId = useSelector(state => state.user);
 
   // Retuning
   return (
@@ -226,9 +229,13 @@ const HomeDrawer = () => {
 
       <Drawer.Screen
         name="AuthStack"
-        component={AuthStack}
+        component={
+          (userId == null) ?
+            AuthStack :
+            MyProfileStack
+        }
         options={{
-          drawerLabel: 'Account Login',
+          drawerLabel: userId == null ? 'Account Login' : 'Mon profil',
           drawerIcon: ({ focused }) =>
             focused ? (
               <LoginDarkGreenSvg

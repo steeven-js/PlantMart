@@ -11,6 +11,7 @@ import auth from '@react-native-firebase/auth';
 import { resetUser, setUser } from './Redux/User';
 import { useDispatch, useSelector } from 'react-redux';
 
+
 // Functional component
 const App = () => {
   // Local states
@@ -52,6 +53,8 @@ const App = () => {
     // Returning
     return <Splash />;
   }
+
+
 
   // Returning
   return (

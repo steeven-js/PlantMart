@@ -92,16 +92,16 @@ const Login = ({ navigation }) => {
       const userInfo = await GoogleSignin.signIn();
       // console.log('Connexion Google réussie. UserInfo :', userInfo, "GoogleSignin : ", GoogleSignin.getTokens());
 
-      const token = await GoogleSignin.getTokens();
+      // const token = await GoogleSignin.getTokens();
+      // console.log('token :', token.idToken)
 
-      console.log('token :', token.idToken)
       // Obtenir le jeton d'identification de l'utilisateur
       const { idToken } = userInfo;
 
       // Créer une authentification Google avec le jeton
       const googleCredential = auth.GoogleAuthProvider.credential(idToken);
 
-      console.log('googleCredential :', googleCredential);
+      // console.log('googleCredential :', googleCredential);
 
       console.log('Connexion à Firebase avec l\'authentification Google...');
       // Connecter l'utilisateur avec l'authentification
@@ -120,6 +120,8 @@ const Login = ({ navigation }) => {
         console.error('Une autre erreur s\'est produite.', error);
       }
     }
+
+    goToHome();
   };
 
   signOut = async () => {
@@ -232,8 +234,6 @@ const Login = ({ navigation }) => {
               />
             </TouchableOpacity>
           </Animatable.View>
-
-          <Text onPress={signOut}>Signout</Text>
         </View>
 
         {/* Vertical spacer */}
