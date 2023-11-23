@@ -10,6 +10,7 @@ import AppStyles from './AppStyles';
 import auth from '@react-native-firebase/auth';
 import { resetUser, setUser } from './Redux/User';
 import { useDispatch, useSelector } from 'react-redux';
+import { postData } from './src/common/api';
 
 
 // Functional component
@@ -34,6 +35,18 @@ const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    const name = "user11";
+    const email = "user11@test.com";
+    const uid = "88552244556600";
+    const password = "12345678";
+
+    postData('https://plantmed.jsprod.fr/api/user', {
+      name: name ,
+      email: email,
+      uid: uid,
+      password: password
+    }).then(response => console.log('response', response))
+
     const subscriber = auth().onAuthStateChanged(onUserStateChange);
     return subscriber;
   }, []);

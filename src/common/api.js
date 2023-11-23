@@ -5,37 +5,24 @@ import axios from 'axios';
 
 // Exemple d'implémentation pour une requête POST
 export const postData = async (url = "", donnees = {}) => {
-    // Les options par défaut sont indiquées par *
-    // const response = await fetch(url, {
-    //     method: "POST", // *GET, POST, PUT, DELETE, etc.
-    //     mode: "cors", // no-cors, *cors, same-origin
-    //     cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-    //     credentials: "same-origin", // include, *same-origin, omit
-    //     headers: {
-    //         // "Content-Type": "application/json",
-    //         'Content-Type': 'application/x-www-form-urlencoded',
-    //     },
-    //     redirect: "follow", // manual, *follow, error
-    //     referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-    //     body: JSON.stringify(donnees), // le type utilisé pour le corps doit correspondre à l'en-tête "Content-Type"
-    // });
-    // console.log('response', response)
-
-    // const json = await response.text();
-
-    // console.log('json', json)
-    // return null;  
-
-    const { data } = await axios.post(url, donnees, {
-        headers: {
-            'Content-Type': 'multipart/form-data'
+    try {
+        const { data } = await axios.post(url, donnees, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        });
+        console.log('data', data);
+        return data;
+    } catch (error) {
+        console.error('Error in postData:', error);
+        if (error.response) {
+            console.error('Status:', error.response.status);
+            console.error('Data:', error.response.data);
         }
+        throw error; // Rethrow the error to maintain the error chain.
     }
-    )
-    console.log('data', data)
-    return data;
-    // console.log('data', data)
 };
+
 
 export const getOnePlant = async (id = 0) => {
     try {

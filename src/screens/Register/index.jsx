@@ -45,19 +45,19 @@ const Register = ({navigation}) => {
           email: email
         });
 
-        await postData('https://plantmed.jsprod.fr/api/user', {
-          name: email ,
+        const response = await postData('https://plantmed.jsprod.fr/api/user', {
+          name: name ,
           email: email,
           uid: uid,
           password: password
-        }).then(response => console.log('response', response))
+        })
+
+        console.log('response', response)
       }
 
       console.log('postData', postData)
 
       goToHome();
-
-      console.log('postData', postData)
 
       // console.log('email', email , 'password', password);
     } catch (error) {

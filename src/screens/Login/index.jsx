@@ -76,24 +76,14 @@ const Login = ({ navigation }) => {
     }
   };
 
-  const isSignedIn = async () => {
-    const isSignedInState = await GoogleSignin.isSignedIn();
-    console.log('isSignedIn :', isSignedInState);
-    // setState({ isLoginScreenPresented: !isSignedIn });
-  };
-
   const onGoogleButtonPress = async () => {
     try {
-      console.log('Vérification des services Google Play...');
       await GoogleSignin.hasPlayServices();
-      console.log('Services Google Play disponibles.');
-
-      console.log('Lancement de la connexion Google...');
       const userInfo = await GoogleSignin.signIn();
-      // console.log('Connexion Google réussie. UserInfo :', userInfo, "GoogleSignin : ", GoogleSignin.getTokens());
 
       // const token = await GoogleSignin.getTokens();
-      // console.log('token :', token.idToken)
+      console.log('Name:', userInfo.user.name);
+      console.log('Email:', userInfo.user.email);
 
       // Obtenir le jeton d'identification de l'utilisateur
       const { idToken } = userInfo;
@@ -101,26 +91,17 @@ const Login = ({ navigation }) => {
       // Créer une authentification Google avec le jeton
       const googleCredential = auth.GoogleAuthProvider.credential(idToken);
 
-      // console.log('googleCredential :', googleCredential);
-
-      console.log('Connexion à Firebase avec l\'authentification Google...');
       // Connecter l'utilisateur avec l'authentification
       await auth().signInWithCredential(googleCredential);
 
-      console.log('Connexion réussie !');
     } catch (error) {
-      console.error('Erreur lors de la connexion avec Google :', error);
       if (error.code === statusCodes.SIGN_IN_CANCELLED) {
-        console.log('L\'utilisateur a annulé le flux de connexion.');
       } else if (error.code === statusCodes.IN_PROGRESS) {
-        console.log('L\'opération (par exemple, la connexion) est déjà en cours.');
       } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
-        console.log('Les services Google Play ne sont pas disponibles ou obsolètes.');
       } else {
         console.error('Une autre erreur s\'est produite.', error);
       }
     }
-
     goToHome();
   };
 
@@ -133,7 +114,7 @@ const Login = ({ navigation }) => {
   };
 
   useEffect(() => {
-    isSignedIn();
+    
   }, [])
 
   // Returning
